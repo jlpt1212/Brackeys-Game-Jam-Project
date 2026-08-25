@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://crh50kq2uslxl"]
+
+[ext_resource type="Texture2D" uid="uid://bmx16bnxwg7u2" path="res://left placeholder arrow.png" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://bilff8coti7w7" path="res://left_button.gd" id="2_0hol4"]
+[ext_resource type="Texture2D" uid="uid://cw6eek0ca3j0i" path="res://right placeholder arrow.png" id="2_epypp"]
+[ext_resource type="Script" uid="uid://gaxdqffpkne6" path="res://right_button.gd" id="4_0hol4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74whk"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_74whk"]
+diffuse_texture = ExtResource("1_0e48y")
+
+[node name="Node2D" type="Node2D" unique_id=1394893672]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2097219412]
+position_smoothing_enabled = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1757714026]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1062701066]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_74whk")
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D" unique_id=1234224486]
+offset_left = -20.0
+offset_top = -20.0
+scale = Vector2(2, 2)
+color = Color(0.1882353, 0.26666668, 1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1427273453]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=861322641]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Left Button" type="Button" parent="CanvasLayer/Control" unique_id=903419437 node_paths=PackedStringArray("camera")]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 275.0
+offset_right = 208.0
+offset_bottom = 383.0
+icon = SubResource("CanvasTexture_74whk")
+script = ExtResource("2_0hol4")
+camera = NodePath("../../../Camera2D")
+
+[node name="Right Button" type="Button" parent="CanvasLayer/Control" unique_id=1374881646 node_paths=PackedStringArray("camera")]
+layout_mode = 0
+offset_left = 940.0
+offset_top = 275.0
+offset_right = 1125.0
+offset_bottom = 383.0
+icon = ExtResource("2_epypp")
+script = ExtResource("4_0hol4")
+camera = NodePath("../../../Camera2D")
