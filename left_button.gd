@@ -13,7 +13,6 @@ func _on_button_pressed() -> void:
 		var tween = create_tween()
 		var target = camera.global_position + offset
 		tween.tween_property(camera, "global_position", target, 1.0)
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

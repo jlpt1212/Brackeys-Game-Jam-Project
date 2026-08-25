@@ -1,21 +1,17 @@
 [gd_scene format=3 uid="uid://crh50kq2uslxl"]
 
-[ext_resource type="Texture2D" uid="uid://bmx16bnxwg7u2" path="res://left placeholder arrow.png" id="1_0e48y"]
-[ext_resource type="Script" uid="uid://bilff8coti7w7" path="res://left_button.gd" id="2_0hol4"]
-[ext_resource type="Texture2D" uid="uid://cw6eek0ca3j0i" path="res://right placeholder arrow.png" id="2_epypp"]
-[ext_resource type="Script" uid="uid://gaxdqffpkne6" path="res://right_button.gd" id="4_0hol4"]
+[ext_resource type="Script" uid="uid://dt82vd77jiugs" path="res://character_movement.gd" id="1_wtcfe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74whk"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_74whk"]
-diffuse_texture = ExtResource("1_0e48y")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_74whk"]
 
 [node name="Node2D" type="Node2D" unique_id=1394893672]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2097219412]
-position_smoothing_enabled = true
-
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1757714026]
+script = ExtResource("1_wtcfe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1062701066]
 scale = Vector2(2, 2)
@@ -26,31 +22,98 @@ offset_left = -20.0
 offset_top = -20.0
 scale = Vector2(2, 2)
 color = Color(0.1882353, 0.26666668, 1, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1427273453]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=2097219412]
+position_smoothing_enabled = true
 
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=861322641]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=161849864]
+mass = 0.001
+gravity_scale = 0.0
 
-[node name="Left Button" type="Button" parent="CanvasLayer/Control" unique_id=903419437 node_paths=PackedStringArray("camera")]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 275.0
-offset_right = 208.0
-offset_bottom = 383.0
-icon = SubResource("CanvasTexture_74whk")
-script = ExtResource("2_0hol4")
-camera = NodePath("../../../Camera2D")
+[node name="ColorRect" type="ColorRect" parent="RigidBody2D" unique_id=800178336]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 100.0
+offset_top = -100.0
+offset_right = 140.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.69099766, 0.17522566, 0.26396063, 1)
+metadata/_edit_use_anchors_ = true
 
-[node name="Right Button" type="Button" parent="CanvasLayer/Control" unique_id=1374881646 node_paths=PackedStringArray("camera")]
-layout_mode = 0
-offset_left = 940.0
-offset_top = 275.0
-offset_right = 1125.0
-offset_bottom = 383.0
-icon = ExtResource("2_epypp")
-script = ExtResource("4_0hol4")
-camera = NodePath("../../../Camera2D")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1485383735]
+position = Vector2(120, -80)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_y32ns")
+
+[node name="Top Wall" type="RigidBody2D" parent="." unique_id=1930605457]
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Wall" unique_id=1638674214]
+position = Vector2(0, -330)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_74whk")
+
+[node name="ColorRect" type="ColorRect" parent="Top Wall" unique_id=743560239]
+offset_left = -1728.0
+offset_top = -370.0
+offset_right = 1728.0
+offset_bottom = -330.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Bottom Wall" type="RigidBody2D" parent="." unique_id=528472487]
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall" unique_id=2139001079]
+position = Vector2(0, 344)
+shape = SubResource("WorldBoundaryShape2D_74whk")
+
+[node name="ColorRect" type="ColorRect" parent="Bottom Wall" unique_id=1623278130]
+offset_left = -1728.0
+offset_top = 340.0
+offset_right = 1728.0
+offset_bottom = 380.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Left Wall" type="RigidBody2D" parent="." unique_id=206990600]
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall" unique_id=1599160016]
+position = Vector2(-1688, 0)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_74whk")
+
+[node name="ColorRect" type="ColorRect" parent="Left Wall" unique_id=394241173]
+offset_left = -1728.0
+offset_top = -370.0
+offset_right = -1688.0
+offset_bottom = 358.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Right Wall" type="RigidBody2D" parent="." unique_id=634409921]
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall" unique_id=719155175]
+position = Vector2(1688, 0)
+rotation = 4.712389
+shape = SubResource("WorldBoundaryShape2D_74whk")
+
+[node name="ColorRect" type="ColorRect" parent="Right Wall" unique_id=1734861539]
+offset_left = 1688.0
+offset_top = -370.0
+offset_right = 1728.0
+offset_bottom = 358.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
