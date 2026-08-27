@@ -2,23 +2,62 @@
 
 [ext_resource type="Script" uid="uid://c4jd4t5w3nxaq" path="res://Scripts/title_screen.gd" id="1_po227"]
 
-[node name="Title Screen" type="Node2D" unique_id=106060841]
+[node name="Title Screen" type="Node2D" unique_id=106060841 node_paths=PackedStringArray("camera")]
 script = ExtResource("1_po227")
+camera = NodePath("Camera")
 
-[node name="Button" type="Button" parent="." unique_id=1538752723]
-offset_left = 368.0
-offset_top = 289.0
-offset_right = 773.0
-offset_bottom = 506.0
+[node name="Camera" type="Camera2D" parent="." unique_id=331246877]
+position = Vector2(574, 324)
+
+[node name="Title" type="Label" parent="." unique_id=1303896198]
+offset_left = 180.00002
+offset_top = 78.00001
+offset_right = 261.00003
+offset_bottom = 113.88526
+scale = Vector2(10.449621, 2.6194592)
+text = "THE GAME"
+
+[node name="Play Button" type="Button" parent="." unique_id=1538752723]
+offset_left = 442.0
+offset_top = 232.0
+offset_right = 701.0
+offset_bottom = 374.0
 theme_override_font_sizes/font_size = 98
 text = "Play"
 
-[node name="TextEdit" type="TextEdit" parent="." unique_id=508994076]
-offset_left = 404.0
-offset_top = 58.0
-offset_right = 752.0
-offset_bottom = 160.0
-theme_override_font_sizes/font_size = 63
-text = "THE GAME"
+[node name="Rules Button" type="Button" parent="." unique_id=959512481]
+offset_left = 359.0
+offset_top = 435.0
+offset_right = 778.0
+offset_bottom = 573.0
+theme_override_font_sizes/font_size = 95
+text = "Controls"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Rules Text" type="Label" parent="." unique_id=1015022730]
+offset_left = 39.0
+offset_top = 723.00006
+offset_right = 1111.5192
+offset_bottom = 1200.0
+rotation = -0.00018949529
+theme_override_font_sizes/font_size = 32
+text = "Hi! Welcome to the game.
+
+This game consists of 4 days where each day you have to figure out 
+who is the mutiny leader and make them walk the plank.
+
+Choose right on all 4 days to win!
+
+Controls:
+WASD/Arrow Keys - Movement
+E - Interact"
+
+[node name="Back Button" type="Button" parent="." unique_id=739194468]
+offset_left = 23.0
+offset_top = 667.0
+offset_right = 174.0
+offset_bottom = 713.0
+text = "Back"
+
+[connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Rules Button" to="." method="_on_rules_button_pressed"]
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
