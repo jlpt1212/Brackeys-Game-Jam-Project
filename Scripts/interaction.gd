@@ -1,7 +1,7 @@
 extends Area2D
 
-var npcs_list: Array[Node2D] = []
-var highlighted_npc = null;
+var npcs_list: Array[NPC] = []
+var highlighted_npc: NPC = null;
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("npc"):
@@ -16,14 +16,14 @@ func _on_body_exited(body: Node2D) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	update_highlight()
-	if Input.is_action_pressed("interact"):
+	if Input.is_action_just_pressed("interact"):
 		if npcs_list.size() > 0:
-			print("NPC INTERACTED WITH") 
+			highlighted_npc.activate_dialogue()
 			# ^ HERE WE NEED THE DIALOGUE BOX TO WORK
 			# THIS PROCESS SHOULD OBTAIN THE FOLLOWING INFORMATION: CHARACTER INTERACTED WITH, DAY #
 			# AFTER OBTAINING THIS INFORMATION, IT GETS THE DIALOGUE THAT IT NEEDS TO OBTAIN FROM AN OUTSIDE FILE
 			# AND DISPLAYS IT WITH THE DIALOGUE.
-
+			
 func get_closest_npc() -> Node2D:
 	var closest_npc: Node2D;
 	var closest_distance = INF;

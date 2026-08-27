@@ -43,13 +43,14 @@ theme_override_font_sizes/font_size = 32
 text = "Hi! Welcome to the game.
 
 This game consists of 4 days where each day you have to figure out 
-who is the mutiny leader and make them walk the plank.
+who the mutiny leader is and make them walk the plank.
 
 Choose right on all 4 days to win!
 
 Controls:
 WASD/Arrow Keys - Movement
-E - Interact"
+E/Z/Space - Interact
+Esc - Settings Menu"
 
 [node name="Back Button" type="Button" parent="." unique_id=739194468]
 offset_left = 23.0
