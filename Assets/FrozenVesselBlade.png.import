@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw6eek0ca3j0i"
-path="res://.godot/imported/right placeholder arrow.png-a598d7392ac7901f11707c33cf7b075e.ctex"
+uid="uid://cqnnua6iw4lj6"
+path="res://.godot/imported/FrozenVesselBlade.png-701c16b66054f54f2a11907f70c6f2db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://right placeholder arrow.png"
-dest_files=["res://.godot/imported/right placeholder arrow.png-a598d7392ac7901f11707c33cf7b075e.ctex"]
+source_file="res://Assets/FrozenVesselBlade.png"
+dest_files=["res://.godot/imported/FrozenVesselBlade.png-701c16b66054f54f2a11907f70c6f2db.ctex"]
 
 [params]
 

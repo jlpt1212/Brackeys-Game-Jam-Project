@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://crh50kq2uslxl"]
 
-[ext_resource type="Script" uid="uid://dt82vd77jiugs" path="res://character_movement.gd" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://dt82vd77jiugs" path="res://Scripts/character_movement.gd" id="1_grwsy"]
+[ext_resource type="Script" uid="uid://b4b2x26xtikd3" path="res://Scripts/interaction.gd" id="2_0km67"]
+[ext_resource type="Script" uid="uid://rg7di6ypesrj" path="res://Scripts/npc.gd" id="3_0rvqk"]
+[ext_resource type="Shader" uid="uid://80055421g8sm" path="res://Shaders/interaction_shader.gdshader" id="4_h35fg"]
+[ext_resource type="Texture2D" uid="uid://cqnnua6iw4lj6" path="res://Assets/FrozenVesselBlade.png" id="5_ttv08"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_74whk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74whk"]
 
@@ -8,30 +14,45 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_74whk"]
 
-[node name="Node2D" type="Node2D" unique_id=1394893672]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mowf2"]
+shader = ExtResource("4_h35fg")
+shader_parameter/line_color = Color(1, 0.8333334, 0, 1)
+shader_parameter/line_thickness = 0.50000002375
+shader_parameter/highlight_enabled = false
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1757714026]
-script = ExtResource("1_wtcfe")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxl7u"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1062701066]
+[node name="Game Scene" type="Node2D" unique_id=1394893672]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1757714026]
+script = ExtResource("1_grwsy")
+
+[node name="Area2D" type="Area2D" parent="Player" unique_id=790529554]
+script = ExtResource("2_0km67")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D" unique_id=1385176024]
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_74whk")
+
+[node name="Player Collision" type="CollisionShape2D" parent="Player" unique_id=1062701066]
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_74whk")
 
-[node name="ColorRect" type="ColorRect" parent="CharacterBody2D" unique_id=1234224486]
+[node name="ColorRect" type="ColorRect" parent="Player" unique_id=1234224486]
 offset_left = -20.0
 offset_top = -20.0
 scale = Vector2(2, 2)
 color = Color(0.1882353, 0.26666668, 1, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=2097219412]
+[node name="Camera" type="Camera2D" parent="Player" unique_id=2097219412]
 position_smoothing_enabled = true
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=161849864]
+[node name="Test character" type="RigidBody2D" parent="." unique_id=161849864]
 mass = 0.001
 gravity_scale = 0.0
 
-[node name="ColorRect" type="ColorRect" parent="RigidBody2D" unique_id=800178336]
+[node name="ColorRect" type="ColorRect" parent="Test character" unique_id=800178336]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -46,7 +67,7 @@ grow_vertical = 2
 color = Color(0.69099766, 0.17522566, 0.26396063, 1)
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1485383735]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Test character" unique_id=1485383735]
 position = Vector2(120, -80)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_y32ns")
@@ -117,3 +138,18 @@ offset_right = 1728.0
 offset_bottom = 358.0
 color = Color(0, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=612168686 groups=["npc"]]
+position = Vector2(361, 4)
+scale = Vector2(2.05, 2)
+script = ExtResource("3_0rvqk")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=2095680021]
+material = SubResource("ShaderMaterial_mowf2")
+texture = ExtResource("5_ttv08")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2117327316]
+shape = SubResource("RectangleShape2D_jxl7u")
+
+[connection signal="body_entered" from="Player/Area2D" to="Player/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Player/Area2D" to="Player/Area2D" method="_on_body_exited"]
