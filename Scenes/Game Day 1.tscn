@@ -10,12 +10,11 @@
 [ext_resource type="Resource" uid="uid://b1r6tq03osssc" path="res://Dialogue/lisa_day1.dialogue" id="8_64frg"]
 [ext_resource type="Resource" uid="uid://cksx5ro7tsnsg" path="res://Dialogue/charles_day1.dialogue" id="9_2k8g7"]
 [ext_resource type="Resource" uid="uid://dael1731nxv7k" path="res://Dialogue/john_day1.dialogue" id="10_y2y3a"]
+[ext_resource type="Texture2D" uid="uid://0780og0s7hu2" path="res://Assets/ship upper deck.png" id="11_y2y3a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74whk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74whk"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_74whk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mowf2"]
 shader = ExtResource("5_y2y3a")
@@ -25,9 +24,51 @@ shader_parameter/highlight_enabled = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jxl7u"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y2y3a"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_y2y3a"]
+b = Vector2(255, 0)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bm8sy"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vfekk"]
+b = Vector2(0, 258)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_vfekk"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5b22l"]
+a = Vector2(2, 2)
+b = Vector2(2, 324)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2iryk"]
+a = Vector2(-1, 2)
+b = Vector2(-1, 324)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wfal6"]
+a = Vector2(0, 2)
+b = Vector2(303, 2)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5eho8"]
+a = Vector2(0, 2)
+b = Vector2(303, 2)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6tx83"]
+a = Vector2(1, 1)
+b = Vector2(1, 312)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_74whk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5b22l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mowf2"]
+size = Vector2(261, 90)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_74whk"]
+
 [node name="Game Scene" type="Node2D" unique_id=1394893672]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1757714026]
+position = Vector2(168, -1)
 script = ExtResource("1_7tbqs")
 
 [node name="Area2D" type="Area2D" parent="Player" unique_id=790529554]
@@ -51,75 +92,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Camera" type="Camera2D" parent="Player" unique_id=2097219412]
 position_smoothing_enabled = true
 
-[node name="Top Wall" type="RigidBody2D" parent="." unique_id=1930605457]
-mass = 0.001
-gravity_scale = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Wall" unique_id=1638674214]
-position = Vector2(0, -330)
-rotation = 3.1415927
-shape = SubResource("WorldBoundaryShape2D_74whk")
-
-[node name="ColorRect" type="ColorRect" parent="Top Wall" unique_id=743560239]
-offset_left = -1728.0
-offset_top = -370.0
-offset_right = 1728.0
-offset_bottom = -330.0
-color = Color(0, 0, 0, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Bottom Wall" type="RigidBody2D" parent="." unique_id=528472487]
-mass = 0.001
-gravity_scale = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall" unique_id=2139001079]
-position = Vector2(0, 344)
-shape = SubResource("WorldBoundaryShape2D_74whk")
-
-[node name="ColorRect" type="ColorRect" parent="Bottom Wall" unique_id=1623278130]
-offset_left = -1728.0
-offset_top = 340.0
-offset_right = 1728.0
-offset_bottom = 380.0
-color = Color(0, 0, 0, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Left Wall" type="RigidBody2D" parent="." unique_id=206990600]
-mass = 0.001
-gravity_scale = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall" unique_id=1599160016]
-position = Vector2(-1112, 0)
-rotation = 1.5707964
-shape = SubResource("WorldBoundaryShape2D_74whk")
-
-[node name="ColorRect" type="ColorRect" parent="Left Wall" unique_id=394241173]
-offset_left = -1152.0
-offset_top = -370.0
-offset_right = -1112.0
-offset_bottom = 358.0
-color = Color(0, 0, 0, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Right Wall" type="RigidBody2D" parent="." unique_id=634409921]
-mass = 0.001
-gravity_scale = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall" unique_id=719155175]
-position = Vector2(1152, 0)
-rotation = 4.712389
-shape = SubResource("WorldBoundaryShape2D_74whk")
-
-[node name="ColorRect" type="ColorRect" parent="Right Wall" unique_id=1734861539]
-offset_left = 1152.0
-offset_top = -370.0
-offset_right = 1192.0
-offset_bottom = 358.0
-color = Color(0, 0, 0, 1)
-metadata/_edit_use_anchors_ = true
-
 [node name="Bob Bellows" type="CharacterBody2D" parent="." unique_id=612168686 groups=["npc"]]
-position = Vector2(-418, -229)
+position = Vector2(-602, -168)
 script = ExtResource("3_gl113")
 dialogue_resource = ExtResource("4_7tbqs")
 
@@ -134,7 +108,7 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_jxl7u")
 
 [node name="Marley Mildred" type="CharacterBody2D" parent="." unique_id=674668387 groups=["npc"]]
-position = Vector2(-337, -230)
+position = Vector2(-360, 183)
 script = ExtResource("3_gl113")
 dialogue_resource = ExtResource("7_7tbqs")
 
@@ -149,7 +123,7 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_jxl7u")
 
 [node name="Lisa Stone" type="CharacterBody2D" parent="." unique_id=1899561024 groups=["npc"]]
-position = Vector2(-159, -226)
+position = Vector2(204, -184)
 script = ExtResource("3_gl113")
 dialogue_resource = ExtResource("8_64frg")
 
@@ -164,7 +138,7 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_jxl7u")
 
 [node name="Sir Charles" type="CharacterBody2D" parent="." unique_id=879211895 groups=["npc"]]
-position = Vector2(51.999985, -226)
+position = Vector2(335, 193)
 script = ExtResource("3_gl113")
 dialogue_resource = ExtResource("9_2k8g7")
 
@@ -178,7 +152,7 @@ scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_jxl7u")
 
 [node name="John Shark" type="CharacterBody2D" parent="." unique_id=880034028 groups=["npc"]]
-position = Vector2(290, -219)
+position = Vector2(834, -177)
 script = ExtResource("3_gl113")
 dialogue_resource = ExtResource("10_y2y3a")
 
@@ -190,6 +164,141 @@ texture = ExtResource("6_vfekk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="John Shark" unique_id=1632506689]
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_jxl7u")
+
+[node name="ShipUpperDeck" type="Sprite2D" parent="." unique_id=1981279208]
+z_index = -1
+position = Vector2(19.999994, 4.999994)
+scale = Vector2(2.2109375, 2.3263888)
+texture = ExtResource("11_y2y3a")
+
+[node name="Walls" type="Node" parent="." unique_id=870566732]
+
+[node name="Boundary 1" type="RigidBody2D" parent="Walls" unique_id=703093174]
+position = Vector2(465, -133)
+physics_material_override = SubResource("PhysicsMaterial_y2y3a")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Boundary 1" unique_id=603453399]
+position = Vector2(-2, 1)
+shape = SubResource("SegmentShape2D_y2y3a")
+
+[node name="Boundary 2" type="RigidBody2D" parent="Walls" unique_id=1289274100]
+position = Vector2(718, -132)
+physics_material_override = SubResource("PhysicsMaterial_bm8sy")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Boundary 2" unique_id=17503285]
+position = Vector2(-2, 1)
+shape = SubResource("SegmentShape2D_vfekk")
+
+[node name="Boundary 5" type="RigidBody2D" parent="Walls" unique_id=1673161048]
+position = Vector2(-180, -158)
+physics_material_override = SubResource("PhysicsMaterial_vfekk")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Boundary 5" unique_id=69148418]
+position = Vector2(-2, 1)
+shape = SubResource("SegmentShape2D_5b22l")
+
+[node name="Boundary 6" type="RigidBody2D" parent="Walls" unique_id=559095144]
+position = Vector2(122, -158)
+physics_material_override = SubResource("PhysicsMaterial_vfekk")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Boundary 6" unique_id=2043680551]
+position = Vector2(-2, 1)
+shape = SubResource("SegmentShape2D_2iryk")
+
+[node name="Boundary 7" type="RigidBody2D" parent="Walls" unique_id=1308335864]
+position = Vector2(-180, -157)
+physics_material_override = SubResource("PhysicsMaterial_vfekk")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Boundary 7" unique_id=125948467]
+position = Vector2(-2, 1)
+shape = SubResource("SegmentShape2D_wfal6")
+
+[node name="Boundary 8" type="RigidBody2D" parent="Walls" unique_id=723378738]
+position = Vector2(-180, 163)
+physics_material_override = SubResource("PhysicsMaterial_vfekk")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Boundary 8" unique_id=801136238]
+position = Vector2(-2, 1)
+shape = SubResource("SegmentShape2D_5eho8")
+
+[node name="Boundary 9" type="RigidBody2D" parent="Walls" unique_id=252218668]
+position = Vector2(734, -135)
+physics_material_override = SubResource("PhysicsMaterial_vfekk")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Boundary 9" unique_id=365533216]
+position = Vector2(-2, 1)
+shape = SubResource("SegmentShape2D_6tx83")
+
+[node name="Top Wall" type="RigidBody2D" parent="Walls" unique_id=1930605457]
+z_index = 1
+position = Vector2(0, -212)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="Top border" type="CollisionShape2D" parent="Walls/Top Wall" unique_id=1638674214]
+rotation = -3.1415925
+shape = SubResource("WorldBoundaryShape2D_74whk")
+
+[node name="Bottom Wall" type="RigidBody2D" parent="Walls" unique_id=528472487]
+z_index = 1
+position = Vector2(0, 220)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom Wall" unique_id=2139001079]
+shape = SubResource("WorldBoundaryShape2D_74whk")
+
+[node name="Left Wall 1" type="RigidBody2D" parent="Walls" unique_id=206990600]
+z_index = 1
+position = Vector2(-780, -133)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left Wall 1" unique_id=1599160016]
+rotation = 2.7052603
+shape = SubResource("WorldBoundaryShape2D_74whk")
+
+[node name="Left Wall 2" type="RigidBody2D" parent="Walls" unique_id=229943329]
+z_index = 1
+position = Vector2(-812, 125)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left Wall 2" unique_id=251910598]
+rotation = 0.43633232
+shape = SubResource("WorldBoundaryShape2D_74whk")
+
+[node name="Right Wall" type="RigidBody2D" parent="Walls" unique_id=634409921]
+z_index = 1
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right Wall" unique_id=719155175]
+position = Vector2(1060, 0)
+rotation = 4.712389
+shape = SubResource("WorldBoundaryShape2D_74whk")
+
+[node name="stairs (the down type (it has down syndrome))" type="RigidBody2D" parent="." unique_id=244112404 groups=["interactable"]]
+position = Vector2(458, 127)
+physics_material_override = SubResource("PhysicsMaterial_5b22l")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="stairs (the down type (it has down syndrome))" unique_id=658474469]
+position = Vector2(129.5, 45)
+shape = SubResource("RectangleShape2D_mowf2")
+
+[node name="Sprite2D" type="Sprite2D" parent="stairs (the down type (it has down syndrome))" unique_id=1309411763]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(129.74998, 45.25)
+scale = Vector2(260.49997, 89.5)
+texture = SubResource("CanvasTexture_74whk")
 
 [connection signal="body_entered" from="Player/Area2D" to="Player/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Player/Area2D" to="Player/Area2D" method="_on_body_exited"]
