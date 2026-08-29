@@ -1,0 +1,11 @@
+~ start
+Marley Mildred: Yo Cap'n!
+You: Ahoy Marley. You wouldn't happen to know anything about a mutiny on the crew, would you?
+Marley Mildred: Oh Cap'n, I'm so glad you finally caught on. Yes a mutiny has been brewing indeed. And it couldn't be more obvious who's behind it all. 
+You: Really?
+Marley Mildred: It's Bob! I've been suspicious of him for a long time. I don't trust anyone who keeps that quiet. But I've seen him gathering up crewmates and organizing meetings. I even heard him muttering about it in his sleep. Always saying "I'm gonna kill the captain, can't stand him". It's hilarious how obvious it is. Do the right thing Captain and throw him off the ship!
+- I'll look into it
+	=> END
+- Why should I trust what you're saying?
+	Marley Mildred: As the crew's musician, I know many songs. Today, I be singing the truth.
+=> END

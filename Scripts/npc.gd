@@ -6,6 +6,12 @@ class_name NPC
 @export var dialogue_resource: DialogueResource
 @export var dialogue_start: String = "start"
 
+func _ready() -> void:
+	if sprite.material is ShaderMaterial:
+		sprite.material = sprite.material.duplicate()
+		
+		sprite.material.set_shader_parameter("highlight_enabled", false)
+
 func set_highlight(enabled: bool) -> void:
 	sprite.material.set_shader_parameter("highlight_enabled", enabled)
 

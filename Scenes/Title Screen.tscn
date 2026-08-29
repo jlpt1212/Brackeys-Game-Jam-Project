@@ -19,25 +19,25 @@ text = "THE GAME"
 
 [node name="Play Button" type="Button" parent="." unique_id=1538752723]
 offset_left = 442.0
-offset_top = 232.0
+offset_top = 170.0
 offset_right = 701.0
-offset_bottom = 374.0
+offset_bottom = 312.0
 theme_override_font_sizes/font_size = 98
 text = "Play"
 
 [node name="Rules Button" type="Button" parent="." unique_id=959512481]
-offset_left = 359.0
-offset_top = 435.0
-offset_right = 778.0
-offset_bottom = 573.0
+offset_left = 369.0
+offset_top = 342.0
+offset_right = 788.0
+offset_bottom = 480.0
 theme_override_font_sizes/font_size = 95
 text = "Controls"
 
 [node name="Rules Text" type="Label" parent="." unique_id=1015022730]
 offset_left = 39.0
 offset_top = 723.00006
-offset_right = 1111.5192
-offset_bottom = 1200.0
+offset_right = 1111.0
+offset_bottom = 1248.0
 rotation = -0.00018949529
 theme_override_font_sizes/font_size = 32
 text = "Hi! Welcome to the game.
@@ -48,17 +48,45 @@ who the mutiny leader is and make them walk the plank.
 Choose right on all 4 days to win!
 
 Controls:
-WASD/Arrow Keys - Movement
-E/Z/Space - Interact
-Esc - Settings Menu"
+WASD - Movement
+Space - Interact
+Arrow Keys/Mouse - Dialogue"
 
-[node name="Back Button" type="Button" parent="." unique_id=739194468]
+[node name="Back Button (Controls)" type="Button" parent="." unique_id=739194468]
 offset_left = 23.0
 offset_top = 667.0
 offset_right = 174.0
 offset_bottom = 713.0
 text = "Back"
 
+[node name="Credits Button" type="Button" parent="." unique_id=67155384]
+offset_left = 372.0
+offset_top = 508.0
+offset_right = 789.0
+offset_bottom = 631.0
+theme_override_font_sizes/font_size = 84
+text = "Credits"
+
+[node name="Back Button (Credits)" type="Button" parent="." unique_id=1106144335]
+offset_left = 23.0
+offset_top = 1315.0
+offset_right = 174.0
+offset_bottom = 1361.0
+text = "Back"
+
+[node name="Label" type="Label" parent="." unique_id=1596158026]
+offset_left = 39.0
+offset_top = 1371.0
+offset_right = 1111.0
+offset_bottom = 1896.0
+theme_override_font_sizes/font_size = 32
+text = "WELCOME TO THE CREDITSSSS I'LL ADD STUFF HERE LATER HONESTLY
+
+Dialogue Manager Asset Pack by Nathan Hoad
+2D Outer Shader by Nathan Lovato"
+
 [connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Rules Button" to="." method="_on_rules_button_pressed"]
-[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Back Button (Controls)" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Credits Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Back Button (Credits)" to="." method="_on_back_button_credits_pressed"]

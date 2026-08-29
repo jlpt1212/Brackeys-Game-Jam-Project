@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://iyd8c2e7d7g5"
+path="res://.godot/imported/bob_bellows_day1.dialogue-ac4c6b4a945029e7bdc36d131305f2ef.tres"
+
+[deps]
+
+source_file="res://Dialogue/bob_bellows_day1.dialogue"
+dest_files=["res://.godot/imported/bob_bellows_day1.dialogue-ac4c6b4a945029e7bdc36d131305f2ef.tres"]
+
+[params]
+
+defaults=true

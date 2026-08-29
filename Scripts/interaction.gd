@@ -16,14 +16,13 @@ func _on_body_exited(body: Node2D) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	update_highlight()
+	
+
+func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact"):
 		if npcs_list.size() > 0:
 			highlighted_npc.activate_dialogue()
-			# ^ HERE WE NEED THE DIALOGUE BOX TO WORK
-			# THIS PROCESS SHOULD OBTAIN THE FOLLOWING INFORMATION: CHARACTER INTERACTED WITH, DAY #
-			# AFTER OBTAINING THIS INFORMATION, IT GETS THE DIALOGUE THAT IT NEEDS TO OBTAIN FROM AN OUTSIDE FILE
-			# AND DISPLAYS IT WITH THE DIALOGUE.
-			
+
 func get_closest_npc() -> Node2D:
 	var closest_npc: Node2D;
 	var closest_distance = INF;
@@ -35,7 +34,6 @@ func get_closest_npc() -> Node2D:
 			closest_distance = distance
 			closest_npc = npc
 			
-# highlight closest npc
 	return closest_npc
 
 func update_highlight() -> void:
