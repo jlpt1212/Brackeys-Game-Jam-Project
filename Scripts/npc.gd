@@ -16,4 +16,4 @@ func set_highlight(enabled: bool) -> void:
 	sprite.material.set_shader_parameter("highlight_enabled", enabled)
 
 func activate_dialogue() -> void:
-	DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)
+	DialogueManager.show_dialogue_balloon(dialogue_resource, dialogue_start)

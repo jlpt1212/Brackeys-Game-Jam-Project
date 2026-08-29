@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cntgewvo5hto2"]
 
-[ext_resource type="Script" uid="uid://dpq5qg0m04rhl" path="res://test/balloon.gd" id="1_36de5"]
+[ext_resource type="Script" uid="uid://dkj5u3rc2s5gk" path="res://test/balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/nodes/responses_menu/dialogue_responses_menu.gd" id="3_72ixx"]
 
@@ -164,6 +164,7 @@ scroll_active = false
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 24
 text = "Dialogue..."
 
 [node name="Control" type="Control" parent="Balloon/MarginContainer/PanelContainer/MarginContainer/HBoxContainer" unique_id=418507161]
