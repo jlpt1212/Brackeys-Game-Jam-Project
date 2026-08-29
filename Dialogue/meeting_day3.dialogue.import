@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cuvgerdogs258"
+path="res://.godot/imported/meeting_day3.dialogue-23c05d1b5282244c6f76b9ba34885616.tres"
+
+[deps]
+
+source_file="res://Dialogue/meeting_day3.dialogue"
+dest_files=["res://.godot/imported/meeting_day3.dialogue-23c05d1b5282244c6f76b9ba34885616.tres"]
+
+[params]
+
+defaults=true

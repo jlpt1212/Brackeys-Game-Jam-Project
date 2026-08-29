@@ -1,0 +1,11 @@
+~ start
+Marley Mildred: Cap'n, Cap'n, Cap'n... it's happened again hasn't it?
+You: Indeed. Mutiny is a plague that threatens this ship constantly.
+Marley Mildred: You know at what point are you going to stop and ask yourself, "Am I the problem?"
+You: You're not making yourself look too good right now Marley.
+Marley Mildred: Oh calm down Cap'n. I think we've established by now that I'm not causing any mutinies. My oh so selfish desire to not be killed outweighs any problems I have with you.
+- So you suggest it's John?
+	Marley Mildred: Well I certainly wouldn't suggest that it was me now would I?
+- Are you sure?
+	Marley Mildred: As sure as I can be.
+=> END

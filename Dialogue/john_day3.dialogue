@@ -1,0 +1,11 @@
+~ start
+John S. Hark: Captain! I need to tell you something!
+You: What is it?
+John S. Hark: It's Marley. I'm almost positive he's leading the mutiny this time.
+You: What makes you think that?
+John S. Hark: Think about it. Who do you trust more? Marley? Or Lisa? It has to be either one of them, and Lisa is one of the most noble and loyal people I know.
+- Marley doesn't have the guts to fight me
+	John S. Hark: Maybe not to your face. But he's exactly the type of person to go behind the back and turn the crew on you.
+- Lisa's been acting different recently
+	John S. Hark: She's still the same person. She hasn't told me that she's the leader, and I don't think she would lie to me.
+=> END

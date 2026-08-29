@@ -1,0 +1,11 @@
+~ start
+Marley Mildred: Hey Captain!
+You: Hey.
+Marley Mildred: You feel it don't you? Once again that foul stench of mutiny poisons the air. You're really not a great captain considering how much this happens.
+You: Just tell me what you know, although I don't know if I should believe it.
+Marley Mildred: The only thing I can tell you is that it's not me. I might not love your leadership, but I know how mutinies end on this ship. And you know me, I ain't exactly one to die for a cause.
+- But I also know not to trust anything you say.
+	Marley Mildred: Think what you want, but I haven't betrayed you yet
+- Come on, you must know something more.
+	Marley Mildred: All I know is that the other crew mates aren't quite themselves anymore. Lisa and John may have more of a heart than me, but that just means that they're growing more and more upset whenever you kill a crew mate. What will win? Their loyalty to you? Or their loyalty to the whole crew. They'll have to choose at some point.
+=> END

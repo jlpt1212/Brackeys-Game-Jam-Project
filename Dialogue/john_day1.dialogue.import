@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dael1731nxv7k"
+path="res://.godot/imported/john_day1.dialogue-895350e7e9b319726ac34c9a8629d900.tres"
+
+[deps]
+
+source_file="res://Dialogue/john_day1.dialogue"
+dest_files=["res://.godot/imported/john_day1.dialogue-895350e7e9b319726ac34c9a8629d900.tres"]
+
+[params]
+
+defaults=true

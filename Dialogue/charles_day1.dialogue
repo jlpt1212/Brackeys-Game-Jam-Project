@@ -1,0 +1,13 @@
+~ start
+Sir Charles Smith II: Salutations Captain.
+You: Hey there Charles. Since you clean everyone's quarters so much, I was wondering if you've seen any signs of a possible mutiny on board?
+Sir Charles Smith II: A mutiny? With this crew? I've never heard of such a thing! What a ridiculous presumption. What could possibly give you such an idea?
+You: So you really haven't seen or heard anything?
+Sir Charles Smith II: Please Captain, if I had ever an inkling of a mutiny on this ship, you would have heard of it immediately.
+- Do you know where some of my gold could be? I have less than I did before?
+	Sir Charles Smith II: Perhaps some of the other members took it.
+	You: Unless I'm mistaken, you are the only other member aboard with a key to my quarters.
+	Sir Charles Smith II: Yes well, perhaps I misplaced my key.
+- Is there anyone you don't trust on this ship?
+	Sir Charles Smith II: Mr. Mildred has always struck me as quite the... deceitful kind. On the other hand I have never known John to tell a lie. Quite a good fellow indeed.
+=> END

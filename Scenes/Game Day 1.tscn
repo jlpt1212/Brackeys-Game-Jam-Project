@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://crh50kq2uslxl"]
+
+[ext_resource type="Script" uid="uid://dt82vd77jiugs" path="res://Scripts/character_movement.gd" id="1_7tbqs"]
+[ext_resource type="Script" uid="uid://b4b2x26xtikd3" path="res://Scripts/interaction.gd" id="2_64frg"]
+[ext_resource type="Script" uid="uid://rg7di6ypesrj" path="res://Scripts/npc.gd" id="3_gl113"]
+[ext_resource type="Resource" uid="uid://iyd8c2e7d7g5" path="res://Dialogue/bob_day1.dialogue" id="4_7tbqs"]
+[ext_resource type="Shader" uid="uid://80055421g8sm" path="res://Shaders/interaction_shader.gdshader" id="5_y2y3a"]
+[ext_resource type="Texture2D" uid="uid://cqnnua6iw4lj6" path="res://Assets/FrozenVesselBlade.png" id="6_vfekk"]
+[ext_resource type="Resource" uid="uid://w6lw88tlcvw1" path="res://Dialogue/marley_day1.dialogue" id="7_7tbqs"]
+[ext_resource type="Resource" uid="uid://b1r6tq03osssc" path="res://Dialogue/lisa_day1.dialogue" id="8_64frg"]
+[ext_resource type="Resource" uid="uid://cksx5ro7tsnsg" path="res://Dialogue/charles_day1.dialogue" id="9_2k8g7"]
+[ext_resource type="Resource" uid="uid://dael1731nxv7k" path="res://Dialogue/john_day1.dialogue" id="10_y2y3a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_74whk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74whk"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_74whk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mowf2"]
+shader = ExtResource("5_y2y3a")
+shader_parameter/line_color = Color(1, 0.8333334, 0, 1)
+shader_parameter/line_thickness = 0.50000002375
+shader_parameter/highlight_enabled = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxl7u"]
+
+[node name="Game Scene" type="Node2D" unique_id=1394893672]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1757714026]
+script = ExtResource("1_7tbqs")
+
+[node name="Area2D" type="Area2D" parent="Player" unique_id=790529554]
+script = ExtResource("2_64frg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D" unique_id=1385176024]
+scale = Vector2(8, 8)
+shape = SubResource("CircleShape2D_74whk")
+
+[node name="Player Collision" type="CollisionShape2D" parent="Player" unique_id=1062701066]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_74whk")
+
+[node name="ColorRect" type="ColorRect" parent="Player" unique_id=1234224486]
+offset_left = -20.0
+offset_top = -20.0
+scale = Vector2(2, 2)
+color = Color(0.1882353, 0.26666668, 1, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Camera" type="Camera2D" parent="Player" unique_id=2097219412]
+position_smoothing_enabled = true
+
+[node name="Top Wall" type="RigidBody2D" parent="." unique_id=1930605457]
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top Wall" unique_id=1638674214]
+position = Vector2(0, -330)
+rotation = 3.1415927
+shape = SubResource("WorldBoundaryShape2D_74whk")
+
+[node name="ColorRect" type="ColorRect" parent="Top Wall" unique_id=743560239]
+offset_left = -1728.0
+offset_top = -370.0
+offset_right = 1728.0
+offset_bottom = -330.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Bottom Wall" type="RigidBody2D" parent="." unique_id=528472487]
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall" unique_id=2139001079]
+position = Vector2(0, 344)
+shape = SubResource("WorldBoundaryShape2D_74whk")
+
+[node name="ColorRect" type="ColorRect" parent="Bottom Wall" unique_id=1623278130]
+offset_left = -1728.0
+offset_top = 340.0
+offset_right = 1728.0
+offset_bottom = 380.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Left Wall" type="RigidBody2D" parent="." unique_id=206990600]
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall" unique_id=1599160016]
+position = Vector2(-1112, 0)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_74whk")
+
+[node name="ColorRect" type="ColorRect" parent="Left Wall" unique_id=394241173]
+offset_left = -1152.0
+offset_top = -370.0
+offset_right = -1112.0
+offset_bottom = 358.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Right Wall" type="RigidBody2D" parent="." unique_id=634409921]
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall" unique_id=719155175]
+position = Vector2(1152, 0)
+rotation = 4.712389
+shape = SubResource("WorldBoundaryShape2D_74whk")
+
+[node name="ColorRect" type="ColorRect" parent="Right Wall" unique_id=1734861539]
+offset_left = 1152.0
+offset_top = -370.0
+offset_right = 1192.0
+offset_bottom = 358.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Bob Bellows" type="CharacterBody2D" parent="." unique_id=612168686 groups=["npc"]]
+position = Vector2(-418, -229)
+script = ExtResource("3_gl113")
+dialogue_resource = ExtResource("4_7tbqs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bob Bellows" unique_id=2095680021]
+material = SubResource("ShaderMaterial_mowf2")
+scale = Vector2(2, 2)
+texture = ExtResource("6_vfekk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bob Bellows" unique_id=2117327316]
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_jxl7u")
+
+[node name="Marley Mildred" type="CharacterBody2D" parent="." unique_id=674668387 groups=["npc"]]
+position = Vector2(-337, -230)
+script = ExtResource("3_gl113")
+dialogue_resource = ExtResource("7_7tbqs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Marley Mildred" unique_id=719602564]
+material = SubResource("ShaderMaterial_mowf2")
+scale = Vector2(2, 2)
+texture = ExtResource("6_vfekk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Marley Mildred" unique_id=776593934]
+position = Vector2(-0.952381, 0)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_jxl7u")
+
+[node name="Lisa Stone" type="CharacterBody2D" parent="." unique_id=1899561024 groups=["npc"]]
+position = Vector2(-159, -226)
+script = ExtResource("3_gl113")
+dialogue_resource = ExtResource("8_64frg")
+
+[node name="Sprite2D" type="Sprite2D" parent="Lisa Stone" unique_id=1983372670]
+material = SubResource("ShaderMaterial_mowf2")
+position = Vector2(0, -1)
+scale = Vector2(2, 2)
+texture = ExtResource("6_vfekk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lisa Stone" unique_id=1662923250]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_jxl7u")
+
+[node name="Sir Charles" type="CharacterBody2D" parent="." unique_id=879211895 groups=["npc"]]
+position = Vector2(51.999985, -226)
+script = ExtResource("3_gl113")
+dialogue_resource = ExtResource("9_2k8g7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sir Charles" unique_id=1877439317]
+material = SubResource("ShaderMaterial_mowf2")
+scale = Vector2(2, 2)
+texture = ExtResource("6_vfekk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sir Charles" unique_id=53425162]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_jxl7u")
+
+[node name="John Shark" type="CharacterBody2D" parent="." unique_id=880034028 groups=["npc"]]
+position = Vector2(290, -219)
+script = ExtResource("3_gl113")
+dialogue_resource = ExtResource("10_y2y3a")
+
+[node name="Sprite2D" type="Sprite2D" parent="John Shark" unique_id=1489173044]
+material = SubResource("ShaderMaterial_mowf2")
+scale = Vector2(2, 2)
+texture = ExtResource("6_vfekk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="John Shark" unique_id=1632506689]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_jxl7u")
+
+[connection signal="body_entered" from="Player/Area2D" to="Player/Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Player/Area2D" to="Player/Area2D" method="_on_body_exited"]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://itcjkaog72dn"
+path="res://.godot/imported/john_day3.dialogue-630a6a06ab174826f2fbc76044f3a342.tres"
+
+[deps]
+
+source_file="res://Dialogue/john_day3.dialogue"
+dest_files=["res://.godot/imported/john_day3.dialogue-630a6a06ab174826f2fbc76044f3a342.tres"]
+
+[params]
+
+defaults=true

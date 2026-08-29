@@ -1,0 +1,9 @@
+~ start
+Marley Mildred: Hey Cap'n, yesterday was eventful no?
+You: I guess you could say that.
+Marley Mildred: Oh lighten up. Look I'm sorry I was wrong about the whole Bob thing. But this time I'm really sure it's him.
+- What do you have against Bob?
+	Marley Mildred: Too whiny for how strong he is. If I were that ripped I'd be throwing guys around left and right. But he's too busy moping about his family and his home. "Waah I miss my wife and kids, waaaaahhh. Boo hoo OH BOO HOO"
+- Why do you lie so much?
+	Marley Mildred: Look Captain. We're pirates. We've given up on trying to be good people. So why not at least have fun?
+=> END

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cx0jmva65lfat"
+path="res://.godot/imported/marley_day2.dialogue-9431893d4da90885287ac402b71d8fb0.tres"
+
+[deps]
+
+source_file="res://Dialogue/marley_day2.dialogue"
+dest_files=["res://.godot/imported/marley_day2.dialogue-9431893d4da90885287ac402b71d8fb0.tres"]
+
+[params]
+
+defaults=true

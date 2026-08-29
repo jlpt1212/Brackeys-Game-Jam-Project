@@ -1,0 +1,9 @@
+~ start
+Lisa Stone: Oh hey there Captain.
+You: You alright?
+Lisa Stone: Yeah it's just, I feel a bit guilty about Charles.
+- He was a traitor. You know more than anyone how important loyalty is.
+	Lisa Stone: I know, I know. But all this talk about loyalty have me wondering if some people be more loyal to their home than their crew. That's what be worryin' me the most.
+- You've killed many people before. Why is this any different?
+	Lisa Stone: Aye, I've killed many a pirate before. But never one of me own crew. Sometimes I wonder if all the killin' be changing who I am.
+=> END

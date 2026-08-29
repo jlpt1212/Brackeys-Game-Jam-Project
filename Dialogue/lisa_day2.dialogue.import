@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://btbw1ameugo7g"
+path="res://.godot/imported/lisa_day2.dialogue-7c8b7535020b66e47981aa397f7f57bd.tres"
+
+[deps]
+
+source_file="res://Dialogue/lisa_day2.dialogue"
+dest_files=["res://.godot/imported/lisa_day2.dialogue-7c8b7535020b66e47981aa397f7f57bd.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dcx0hsin3q0lr"
+path="res://.godot/imported/meeting_day2.dialogue-c4cfd7bf07c707828356f2e1d0fa3e74.tres"
+
+[deps]
+
+source_file="res://Dialogue/meeting_day2.dialogue"
+dest_files=["res://.godot/imported/meeting_day2.dialogue-c4cfd7bf07c707828356f2e1d0fa3e74.tres"]
+
+[params]
+
+defaults=true
