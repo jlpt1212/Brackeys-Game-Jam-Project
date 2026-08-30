@@ -37,6 +37,22 @@ var locals: Dictionary = {}
 
 var _locale: String = TranslationServer.get_locale()
 
+func play_voice(dialogue_line: DialogueLine) -> void:
+	if dialogue_line.static_id == "":
+		return
+	
+	var character_folder: String = dialogue_line.character.split(" ")[0]
+	
+	var voice_path = "res://Assets/voice clips/%s/%s.wav" % [character_folder, dialogue_line.static_id]
+	
+	print("Looking for voice file: ", voice_path)
+	
+	if ResourceLoader.exists(voice_path):
+		audio_stream_player.stream = load(voice_path)
+		audio_stream_player.play()
+	else:
+		push_warning("Voice file not found at path: ", voice_path)
+
 ## The current line
 var dialogue_line: DialogueLine:
 	set(value):
@@ -130,6 +146,8 @@ func apply_dialogue_line() -> void:
 	is_waiting_for_input = false
 	balloon.focus_mode = Control.FOCUS_ALL
 	balloon.grab_focus()
+	
+	play_voice(dialogue_line)
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
@@ -150,12 +168,7 @@ func apply_dialogue_line() -> void:
 		await dialogue_label.finished_typing
 
 	# Wait for next line
-	if dialogue_line.has_tag("voice"):
-		audio_stream_player.stream = load(dialogue_line.get_tag_value("voice"))
-		audio_stream_player.play()
-		await audio_stream_player.finished
-		next(dialogue_line.next_id)
-	elif dialogue_line.responses.size() > 0:
+	if dialogue_line.responses.size() > 0:
 		balloon.focus_mode = Control.FOCUS_NONE
 		responses_menu.show()
 	elif dialogue_line.time != "":
@@ -170,8 +183,8 @@ func apply_dialogue_line() -> void:
 
 ## Go to the next line
 func next(next_id: String) -> void:
+	audio_stream_player.stop() # Add this line here
 	dialogue_line = await dialogue_resource.get_next_dialogue_line(next_id, temporary_game_states)
-
 
 #region Signals
 

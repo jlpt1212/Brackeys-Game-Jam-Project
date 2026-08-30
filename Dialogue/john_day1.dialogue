@@ -1,9 +1,9 @@
 ~ start
-John S. Hark: Hey dude, what's up?
+John S. Hark: Hey dude, what's up? [ID:john 1.1]
 You: Ahoy John! Do you have any news of anything, suspicious maybe?
-John S. Hark: Suspicious? Nah not really. Although I do hear Bob talking a lot in his sleep.
+John S. Hark: Suspicious? Nah not really. Although I do hear Bob talking a lot in his sleep. [ID:john 1.2]
 - Talking? About what?
-	John S. Hark: Nothing crazy. He mostly just mutters the name of his wife and kids from home. It's really sweet honestly. I think the more he misses them, the less he talks when he's awake. Feel bad for the guy.
+	John S. Hark: Nothing crazy. He mostly just mutters the name of his wife and kids from home. It's really sweet honestly. I think the more he misses them, the less he talks when he's awake. Feel bad for the guy. [ID:john 1.3.1]
 - What do you know about Charles?
-	John S. Hark: Not much. But he's very articulate. Every night I see him count his keys and other belongings before he sleeps. That guy never loses anything.
+	John S. Hark: Not much. But he's very articulate. Every night I see him count his keys and other belongings before he sleeps. That guy never loses anything.[ID:john 1.3.2]
 => END
