@@ -3,5 +3,5 @@ Bob Bellows: Hey Cap'n [ID:bob 1.1]
 You: Ahoy there Bob! How be ye? [ID:you 1.1]
 Bob Bellows: Alright I guess [ID:bob 1.2]
 You: Good, good. Now Bob, I know you're a good listener. At least, you're not much of a talker. Have you heard of anything to do with a mutiny on board? [ID:you 1.2]
-BB: Mutiny? I don't know nothing about no mutiny. Though I have seen Marley and Lisa talking quite a bit recently. Not sure what business Lisa could have with a liar like Marley, but maybe they know something. [ID:bob 1.3]
+Bob Bellows: Mutiny? I don't know nothing about no mutiny. Though I have seen Marley and Lisa talking quite a bit recently. Not sure what business Lisa could have with a liar like Marley, but maybe they know something. [ID:bob 1.3]
 => END
