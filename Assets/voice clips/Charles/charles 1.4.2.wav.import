@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blv8ftdfb5u77"
+path="res://.godot/imported/charles 1.4.2.wav-f2332434638b0c5626e43bdcd87e23ca.sample"
+
+[deps]
+
+source_file="res://Assets/voice clips/Charles/charles 1.4.2.wav"
+dest_files=["res://.godot/imported/charles 1.4.2.wav-f2332434638b0c5626e43bdcd87e23ca.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

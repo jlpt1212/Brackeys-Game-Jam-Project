@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fe81dsfhiwrw"
+path="res://.godot/imported/lisa 3.1.wav-535fd40cc15da16636fb04f99e6df6ef.sample"
+
+[deps]
+
+source_file="res://Assets/voice clips/Lisa/lisa 3.1.wav"
+dest_files=["res://.godot/imported/lisa 3.1.wav-535fd40cc15da16636fb04f99e6df6ef.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

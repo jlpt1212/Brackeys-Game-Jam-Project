@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://mim8qnl3s5x7"
+path="res://.godot/imported/bob 2.2.wav-bbfe016555dd70d1e15c6d8b8d2607f6.sample"
+
+[deps]
+
+source_file="res://Assets/voice clips/Bob/bob 2.2.wav"
+dest_files=["res://.godot/imported/bob 2.2.wav-bbfe016555dd70d1e15c6d8b8d2607f6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

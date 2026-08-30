@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c3ewrplmhm3oh"
+path="res://.godot/imported/you 3.1.wav-876c747f42fb0af4fd188f84a1e2c2f8.sample"
+
+[deps]
+
+source_file="res://Assets/voice clips/You/you 3.1.wav"
+dest_files=["res://.godot/imported/you 3.1.wav-876c747f42fb0af4fd188f84a1e2c2f8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
