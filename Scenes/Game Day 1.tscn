@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dt82vd77jiugs" path="res://Scripts/character_movement.gd" id="1_7tbqs"]
 [ext_resource type="Script" uid="uid://b4b2x26xtikd3" path="res://Scripts/interaction.gd" id="2_64frg"]
 [ext_resource type="Script" uid="uid://rg7di6ypesrj" path="res://Scripts/npc.gd" id="3_gl113"]
+[ext_resource type="Texture2D" uid="uid://dogprk7i3ky8y" path="res://Assets/sprite sheet 1.png" id="3_svbuy"]
 [ext_resource type="Resource" uid="uid://iyd8c2e7d7g5" path="res://Dialogue/bob_day1.dialogue" id="4_7tbqs"]
 [ext_resource type="Shader" uid="uid://80055421g8sm" path="res://Shaders/interaction_shader.gdshader" id="5_y2y3a"]
 [ext_resource type="Texture2D" uid="uid://cqnnua6iw4lj6" path="res://Assets/FrozenVesselBlade.png" id="6_vfekk"]
@@ -155,15 +156,15 @@ shape = SubResource("CircleShape2D_74whk")
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_74whk")
 
-[node name="ColorRect" type="ColorRect" parent="Player" unique_id=1234224486]
-offset_left = -20.0
-offset_top = -20.0
-scale = Vector2(2, 2)
-color = Color(0.1882353, 0.26666668, 1, 1)
-metadata/_edit_use_anchors_ = true
-
 [node name="Camera" type="Camera2D" parent="Player" unique_id=2097219412]
 position_smoothing_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=748182155]
+texture_filter = 1
+position = Vector2(-2, -19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_svbuy")
+hframes = 4
 
 [node name="ShipUpperDeck" type="Sprite2D" parent="." unique_id=1981279208]
 z_index = -1
@@ -179,7 +180,6 @@ dialogue_resource = ExtResource("4_7tbqs")
 [node name="Sprite2D" type="Sprite2D" parent="Bob Bellows" unique_id=2095680021]
 material = SubResource("ShaderMaterial_mowf2")
 scale = Vector2(2, 2)
-texture = ExtResource("6_vfekk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bob Bellows" unique_id=2117327316]
 position = Vector2(0, -1)
@@ -503,6 +503,7 @@ texture = ExtResource("18_svbuy")
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_6b8oa")
 
+<<<<<<< HEAD
 [node name="MastTop" type="Sprite2D" parent="." unique_id=373202001]
 position = Vector2(30.999998, -461)
 scale = Vector2(2.2109375, 2.2569444)
@@ -518,6 +519,9 @@ texture = ExtResource("20_1hxii")
 position = Vector2(32.777496, 3.4999843)
 scale = Vector2(2.1840277, 2.1840277)
 texture = ExtResource("21_s63xi")
+=======
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=385672817]
+>>>>>>> 85d512cdfc7e2e4424d9d365f751e8ea1fdc5202
 
 [connection signal="body_entered" from="Player/Area2D" to="Player/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Player/Area2D" to="Player/Area2D" method="_on_body_exited"]
