@@ -1,12 +1,14 @@
 ~ start
-Bob Bellows: Good mornin' Cap'n.
+Bob Bellows: Good mornin' Cap'n. [ID:bob 2.1]
 You: Morning! Nice weather today isn't it? 
-Bob Bellows: I suppose. Not as nice as back home though.
+Bob Bellows: I suppose. Not as nice as back home though. [ID:bob 2.2]
 You: You miss it, don't you.
-Bob Bellows: Every day.
+Bob Bellows: Every day. [ID:bob 2.3]
 You: Do you miss it enough to leave? By force if you have to?
-Bob Bellows: I'm not the one causing that mutiny if that's what you're getting at. I ain't that desperate. Not yet.
+Bob Bellows: I'm not the one causing that mutiny if that's what you're getting at. I ain't that desperate. Not yet. [ID:bob 2.4]
 - Is there anyone you think might be?
-	Bob Bellows: Marley would be my guess. Never trusted him.
+	You: Is there anyone you think might be?
+	Bob Bellows: Marley would be my guess. Never trusted him. [ID:bob 2.5.1]
 - I'm sorry you're feeling so down.
+	You: I'm sorry you're feeling so down.
 => END
