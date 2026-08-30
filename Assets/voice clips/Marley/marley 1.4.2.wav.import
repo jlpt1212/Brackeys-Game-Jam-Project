@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bu4mbc0l70m2g"
+path="res://.godot/imported/marley 1.4.2.wav-a2f19a5b13b1f4f810aec0311ce915a5.sample"
+
+[deps]
+
+source_file="res://Assets/voice clips/Marley/marley 1.4.2.wav"
+dest_files=["res://.godot/imported/marley 1.4.2.wav-a2f19a5b13b1f4f810aec0311ce915a5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
