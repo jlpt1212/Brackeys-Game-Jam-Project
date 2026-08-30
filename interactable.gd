@@ -19,16 +19,16 @@ func set_highlight(enabled: bool) -> void:
 
 func trigger_interact() -> void:
 	if stair_down_1:
-		player.position = Vector2(189, 800)
+		player.position = Vector2(5808.0, 1695.0)
 		camera.reset_smoothing()
 	elif stair_down_2:
-		player.position = Vector2(240, 1590)
+		player.position = Vector2(118.0, 1606.0)
 		camera.reset_smoothing()
 	elif stair_up_1:
 		player.position = Vector2(410, 175)
 		camera.reset_smoothing()
 	elif stair_up_2:
-		player.position = Vector2(189, 800)
+		player.position = Vector2(5808.0, 1695.0)
 		camera.reset_smoothing()
 	elif meeting_button:
 		player.position = Vector2(2200, 0)
