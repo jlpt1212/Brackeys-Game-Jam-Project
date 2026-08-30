@@ -522,10 +522,6 @@ z_index = 1
 position = Vector2(35, -4)
 scale = Vector2(2.1840277, 2.1840277)
 texture = ExtResource("21_s63xi")
-<<<<<<< HEAD
-
-=======
->>>>>>> adc447e12b5521d5aa8a05e4bb5ffde7a0a83d81
 
 [connection signal="body_entered" from="Player/Area2D" to="Player/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Player/Area2D" to="Player/Area2D" method="_on_body_exited"]
