@@ -148,7 +148,7 @@ size = Vector2(30, 190)
 [node name="Game Scene" type="Node2D" unique_id=1394893672]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1757714026]
-position = Vector2(2200, 0)
+position = Vector2(2205, 0)
 script = ExtResource("1_7tbqs")
 
 [node name="Area2D" type="Area2D" parent="Player" unique_id=790529554]
@@ -411,13 +411,13 @@ texture = ExtResource("13_bm8sy")
 
 [node name="ShipMidDeck" type="Sprite2D" parent="." unique_id=810222089]
 z_index = -1
-position = Vector2(0, 800)
+position = Vector2(5614, 1598)
 texture = ExtResource("14_5b22l")
 
 [node name="Walls 2" type="Node" parent="." unique_id=2094770146]
 
 [node name="Top Wall" type="RigidBody2D" parent="Walls 2" unique_id=1289016861]
-position = Vector2(0, 648)
+position = Vector2(5614, 1446)
 physics_material_override = SubResource("PhysicsMaterial_74whk")
 gravity_scale = 0.0
 
@@ -425,7 +425,7 @@ gravity_scale = 0.0
 shape = SubResource("RectangleShape2D_wfal6")
 
 [node name="Bottom Wall" type="RigidBody2D" parent="Walls 2" unique_id=2040577758]
-position = Vector2(-1, 952)
+position = Vector2(5613, 1750)
 physics_material_override = SubResource("PhysicsMaterial_74whk")
 gravity_scale = 0.0
 
@@ -433,7 +433,7 @@ gravity_scale = 0.0
 shape = SubResource("RectangleShape2D_wfal6")
 
 [node name="Left Wall" type="RigidBody2D" parent="Walls 2" unique_id=182041033]
-position = Vector2(-519, 808)
+position = Vector2(5095, 1606)
 physics_material_override = SubResource("PhysicsMaterial_74whk")
 gravity_scale = 0.0
 
@@ -442,7 +442,7 @@ position = Vector2(-1, -8)
 shape = SubResource("RectangleShape2D_m0o0u")
 
 [node name="Right Wall" type="RigidBody2D" parent="Walls 2" unique_id=820637412]
-position = Vector2(521, 808)
+position = Vector2(6135, 1606)
 physics_material_override = SubResource("PhysicsMaterial_74whk")
 gravity_scale = 0.0
 
@@ -451,7 +451,7 @@ position = Vector2(-1, -8)
 shape = SubResource("RectangleShape2D_m0o0u")
 
 [node name="Stairs 2" type="RigidBody2D" parent="." unique_id=1431536139 node_paths=PackedStringArray("player", "camera") groups=["interactable"]]
-position = Vector2(374, 786)
+position = Vector2(5988, 1584)
 physics_material_override = SubResource("PhysicsMaterial_6b8oa")
 gravity_scale = 0.0
 script = ExtResource("12_vfekk")
@@ -468,7 +468,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_yw3t0")
 
 [node name="Stairs 3" type="RigidBody2D" parent="." unique_id=126995697 node_paths=PackedStringArray("player", "camera") groups=["interactable"]]
-position = Vector2(429, 943)
+position = Vector2(6043, 1741)
 physics_material_override = SubResource("PhysicsMaterial_jxl7u")
 gravity_scale = 0.0
 script = ExtResource("12_vfekk")
