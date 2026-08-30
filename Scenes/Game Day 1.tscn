@@ -520,7 +520,6 @@ position = Vector2(35, -4)
 scale = Vector2(2.1840277, 2.1840277)
 texture = ExtResource("21_s63xi")
 
-
 [node name="Meeting Button" type="RigidBody2D" parent="." unique_id=448469319]
 position = Vector2(623, -0.9999995)
 scale = Vector2(2.2109375, 2.3263888)
@@ -536,7 +535,6 @@ offset_top = -9.886567
 offset_right = 9.950537
 offset_bottom = 9.886567
 color = Color(1, 0, 0, 1)
-
 
 [connection signal="body_entered" from="Player/Area2D" to="Player/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Player/Area2D" to="Player/Area2D" method="_on_body_exited"]
