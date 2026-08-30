@@ -11,6 +11,11 @@
 [ext_resource type="Resource" uid="uid://cksx5ro7tsnsg" path="res://Dialogue/charles_day1.dialogue" id="9_2k8g7"]
 [ext_resource type="Resource" uid="uid://dael1731nxv7k" path="res://Dialogue/john_day1.dialogue" id="10_y2y3a"]
 [ext_resource type="Texture2D" uid="uid://0780og0s7hu2" path="res://Assets/ship upper deck.png" id="11_y2y3a"]
+[ext_resource type="Script" uid="uid://blo4vhxldodwi" path="res://interactable.gd" id="12_vfekk"]
+[ext_resource type="Texture2D" uid="uid://bsm5y6r58da50" path="res://Assets/stair 1.png" id="13_bm8sy"]
+[ext_resource type="Texture2D" uid="uid://divwu0xmardx3" path="res://Assets/ship mid deck.png" id="14_5b22l"]
+[ext_resource type="Texture2D" uid="uid://cta8lv7kafs53" path="res://Assets/stair 2.png" id="15_2iryk"]
+[ext_resource type="Texture2D" uid="uid://cfg2nq5tqu1de" path="res://Assets/stair 3.png" id="16_wfal6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74whk"]
 
@@ -58,17 +63,59 @@ b = Vector2(1, 312)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_74whk"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5b22l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5b22l"]
+size = Vector2(556.45105, 16.737488)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2iryk"]
+size = Vector2(547.81555, 20)
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5b22l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mowf2"]
 size = Vector2(261, 90)
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_74whk"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jxl7u"]
+shader = ExtResource("5_y2y3a")
+shader_parameter/line_color = Color(1, 0.8352941, 0, 1)
+shader_parameter/line_thickness = 2.000000095
+shader_parameter/highlight_enabled = false
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_74whk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wfal6"]
+size = Vector2(1056, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0o0u"]
+size = Vector2(16, 320)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6b8oa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2iryk"]
+shader = ExtResource("5_y2y3a")
+shader_parameter/line_color = Color(1, 0.8352941, 0, 1)
+shader_parameter/line_thickness = 2.000000095
+shader_parameter/highlight_enabled = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw3t0"]
+size = Vector2(175, 136)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jxl7u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5eho8"]
+shader = ExtResource("5_y2y3a")
+shader_parameter/line_color = Color(1, 0.8352941, 0, 1)
+shader_parameter/line_thickness = 2.000000095
+shader_parameter/highlight_enabled = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5eho8"]
+size = Vector2(186.25769, 59.46132)
 
 [node name="Game Scene" type="Node2D" unique_id=1394893672]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1757714026]
-position = Vector2(168, -1)
+position = Vector2(200, 0)
 script = ExtResource("1_7tbqs")
 
 [node name="Area2D" type="Area2D" parent="Player" unique_id=790529554]
@@ -91,6 +138,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Camera" type="Camera2D" parent="Player" unique_id=2097219412]
 position_smoothing_enabled = true
+
+[node name="ShipUpperDeck" type="Sprite2D" parent="." unique_id=1981279208]
+z_index = -1
+position = Vector2(19.999994, 4.999994)
+scale = Vector2(2.2109375, 2.3263888)
+texture = ExtResource("11_y2y3a")
 
 [node name="Bob Bellows" type="CharacterBody2D" parent="." unique_id=612168686 groups=["npc"]]
 position = Vector2(-602, -168)
@@ -164,12 +217,6 @@ texture = ExtResource("6_vfekk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="John Shark" unique_id=1632506689]
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_jxl7u")
-
-[node name="ShipUpperDeck" type="Sprite2D" parent="." unique_id=1981279208]
-z_index = -1
-position = Vector2(19.999994, 4.999994)
-scale = Vector2(2.2109375, 2.3263888)
-texture = ExtResource("11_y2y3a")
 
 [node name="Walls" type="Node" parent="." unique_id=870566732]
 
@@ -245,6 +292,7 @@ gravity_scale = 0.0
 [node name="Top border" type="CollisionShape2D" parent="Walls/Top Wall" unique_id=1638674214]
 rotation = -3.1415925
 shape = SubResource("WorldBoundaryShape2D_74whk")
+one_way_collision = true
 
 [node name="Bottom Wall" type="RigidBody2D" parent="Walls" unique_id=528472487]
 z_index = 1
@@ -253,7 +301,9 @@ mass = 0.001
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Bottom Wall" unique_id=2139001079]
-shape = SubResource("WorldBoundaryShape2D_74whk")
+position = Vector2(5, 0)
+shape = SubResource("WorldBoundaryShape2D_5b22l")
+one_way_collision = true
 
 [node name="Left Wall 1" type="RigidBody2D" parent="Walls" unique_id=206990600]
 z_index = 1
@@ -262,8 +312,11 @@ mass = 0.001
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left Wall 1" unique_id=1599160016]
+position = Vector2(-48.486267, 20.035347)
 rotation = 2.7052603
-shape = SubResource("WorldBoundaryShape2D_74whk")
+shape = SubResource("RectangleShape2D_5b22l")
+one_way_collision = true
+one_way_collision_direction = Vector2(0, 0)
 
 [node name="Left Wall 2" type="RigidBody2D" parent="Walls" unique_id=229943329]
 z_index = 1
@@ -272,8 +325,10 @@ mass = 0.001
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left Wall 2" unique_id=251910598]
-rotation = 0.43633232
-shape = SubResource("WorldBoundaryShape2D_74whk")
+position = Vector2(-10.000001, 1.999999)
+rotation = 0.43633235
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_2iryk")
 
 [node name="Right Wall" type="RigidBody2D" parent="Walls" unique_id=634409921]
 z_index = 1
@@ -284,21 +339,104 @@ gravity_scale = 0.0
 position = Vector2(1060, 0)
 rotation = 4.712389
 shape = SubResource("WorldBoundaryShape2D_74whk")
+one_way_collision = true
 
-[node name="stairs (the down type (it has down syndrome))" type="RigidBody2D" parent="." unique_id=244112404 groups=["interactable"]]
-position = Vector2(458, 127)
+[node name="stairs (the down type (it has down syndrome))" type="RigidBody2D" parent="." unique_id=244112404 node_paths=PackedStringArray("player", "camera") groups=["interactable"]]
+position = Vector2(460, 129)
 physics_material_override = SubResource("PhysicsMaterial_5b22l")
 gravity_scale = 0.0
+script = ExtResource("12_vfekk")
+player = NodePath("../Player")
+camera = NodePath("../Player/Camera")
+stair_down_1 = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="stairs (the down type (it has down syndrome))" unique_id=658474469]
 position = Vector2(129.5, 45)
 shape = SubResource("RectangleShape2D_mowf2")
 
-[node name="Sprite2D" type="Sprite2D" parent="stairs (the down type (it has down syndrome))" unique_id=1309411763]
-self_modulate = Color(1, 1, 1, 0)
-position = Vector2(129.74998, 45.25)
-scale = Vector2(260.49997, 89.5)
-texture = SubResource("CanvasTexture_74whk")
+[node name="Sprite2D" type="Sprite2D" parent="stairs (the down type (it has down syndrome))" unique_id=2035411012]
+material = SubResource("ShaderMaterial_jxl7u")
+position = Vector2(127.999985, 33.999996)
+scale = Vector2(0.6365356, 0.76128477)
+texture = ExtResource("13_bm8sy")
+
+[node name="ShipMidDeck" type="Sprite2D" parent="." unique_id=810222089]
+z_index = -1
+position = Vector2(0, 800)
+texture = ExtResource("14_5b22l")
+
+[node name="Walls 2" type="Node" parent="." unique_id=2094770146]
+
+[node name="Top Wall" type="RigidBody2D" parent="Walls 2" unique_id=1289016861]
+position = Vector2(0, 648)
+physics_material_override = SubResource("PhysicsMaterial_74whk")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls 2/Top Wall" unique_id=400684616]
+shape = SubResource("RectangleShape2D_wfal6")
+
+[node name="Bottom Wall" type="RigidBody2D" parent="Walls 2" unique_id=2040577758]
+position = Vector2(-1, 952)
+physics_material_override = SubResource("PhysicsMaterial_74whk")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls 2/Bottom Wall" unique_id=2042225046]
+shape = SubResource("RectangleShape2D_wfal6")
+
+[node name="Left Wall" type="RigidBody2D" parent="Walls 2" unique_id=182041033]
+position = Vector2(-519, 808)
+physics_material_override = SubResource("PhysicsMaterial_74whk")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls 2/Left Wall" unique_id=776883380]
+position = Vector2(-1, -8)
+shape = SubResource("RectangleShape2D_m0o0u")
+
+[node name="Right Wall" type="RigidBody2D" parent="Walls 2" unique_id=820637412]
+position = Vector2(521, 808)
+physics_material_override = SubResource("PhysicsMaterial_74whk")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls 2/Right Wall" unique_id=451924633]
+position = Vector2(-1, -8)
+shape = SubResource("RectangleShape2D_m0o0u")
+
+[node name="Stairs 2" type="RigidBody2D" parent="." unique_id=1431536139 node_paths=PackedStringArray("player", "camera") groups=["interactable"]]
+position = Vector2(374, 786)
+physics_material_override = SubResource("PhysicsMaterial_6b8oa")
+gravity_scale = 0.0
+script = ExtResource("12_vfekk")
+player = NodePath("../Player")
+camera = NodePath("../Player/Camera")
+stair_down_2 = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Stairs 2" unique_id=1990742029]
+material = SubResource("ShaderMaterial_2iryk")
+texture = ExtResource("15_2iryk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs 2" unique_id=1913736361]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_yw3t0")
+
+[node name="Stairs 3" type="RigidBody2D" parent="." unique_id=126995697 node_paths=PackedStringArray("player", "camera") groups=["interactable"]]
+position = Vector2(429, 943)
+physics_material_override = SubResource("PhysicsMaterial_jxl7u")
+gravity_scale = 0.0
+script = ExtResource("12_vfekk")
+player = NodePath("../Player")
+camera = NodePath("../Player/Camera")
+stair_up_1 = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Stairs 3" unique_id=122362479]
+material = SubResource("ShaderMaterial_5eho8")
+position = Vector2(-88.25001, -28.00001)
+scale = Vector2(0.51377404, 0.50877166)
+texture = ExtResource("16_wfal6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs 3" unique_id=2066923236]
+position = Vector2(-88.128845, -28.730652)
+scale = Vector2(1, 0.9999998)
+shape = SubResource("RectangleShape2D_5eho8")
 
 [connection signal="body_entered" from="Player/Area2D" to="Player/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Player/Area2D" to="Player/Area2D" method="_on_body_exited"]

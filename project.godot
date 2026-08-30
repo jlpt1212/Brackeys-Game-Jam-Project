@@ -62,7 +62,7 @@ interact={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/lisa_day1.dialogue", "res://Dialogue/bob_day1.dialogue", "res://Dialogue/marley_day1.dialogue", "res://Dialogue/charles_day1.dialogue", "res://Dialogue/john_day1.dialogue", "res://Dialogue/meeting_day1.dialogue", "res://Dialogue/bob_day2.dialogue", "res://Dialogue/john_day2.dialogue", "res://Dialogue/lisa_day2.dialogue", "res://Dialogue/marley_day2.dialogue", "res://Dialogue/meeting_day2.dialogue", "res://Dialogue/marley_day3.dialogue", "res://Dialogue/lisa_day3.dialogue", "res://Dialogue/john_day3.dialogue", "res://Dialogue/meeting_day3.dialogue", "res://Dialogue/marley_day4.dialogue", "res://Dialogue/john_day4.dialogue", "res://Dialogue/meeting_day4.dialogue", "res://Dialogue/test.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/lisa_day1.dialogue", "res://Dialogue/bob_day1.dialogue", "res://Dialogue/marley_day1.dialogue", "res://Dialogue/charles_day1.dialogue", "res://Dialogue/john_day1.dialogue", "res://Dialogue/meeting_day1.dialogue", "res://Dialogue/bob_day2.dialogue", "res://Dialogue/john_day2.dialogue", "res://Dialogue/lisa_day2.dialogue", "res://Dialogue/marley_day2.dialogue", "res://Dialogue/meeting_day2.dialogue", "res://Dialogue/marley_day3.dialogue", "res://Dialogue/lisa_day3.dialogue", "res://Dialogue/john_day3.dialogue", "res://Dialogue/meeting_day3.dialogue", "res://Dialogue/marley_day4.dialogue", "res://Dialogue/john_day4.dialogue", "res://Dialogue/meeting_day4.dialogue")
 
 [physics]
 

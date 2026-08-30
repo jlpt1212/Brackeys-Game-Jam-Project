@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dlcf3lk6gwd0j"]
 
 [ext_resource type="Script" uid="uid://c4jd4t5w3nxaq" path="res://Scripts/title_screen.gd" id="1_po227"]
+[ext_resource type="Texture2D" uid="uid://50j5s7nvk7vw" path="res://Assets/title background.png" id="2_q81kl"]
 
 [node name="Title Screen" type="Node2D" unique_id=106060841 node_paths=PackedStringArray("camera")]
 script = ExtResource("1_po227")
@@ -75,10 +76,10 @@ offset_bottom = 1361.0
 text = "Back"
 
 [node name="Label" type="Label" parent="." unique_id=1596158026]
-offset_left = 39.0
-offset_top = 1371.0
-offset_right = 1111.0
-offset_bottom = 1896.0
+offset_left = 30.0
+offset_top = 1362.0
+offset_right = 1102.0
+offset_bottom = 1935.0
 theme_override_font_sizes/font_size = 32
 text = "Writer: Johnny Stowfis
 Art Director: Nick Schwarz
@@ -92,6 +93,12 @@ John S. Hark: Dogstab
 
 Dialogue Manager Asset Pack by Nathan Hoad
 2D Outer Shader by Nathan Lovato"
+
+[node name="TitleBackground" type="Sprite2D" parent="." unique_id=777519756]
+z_index = -1
+position = Vector2(574, 324)
+scale = Vector2(1.125, 2.2499998)
+texture = ExtResource("2_q81kl")
 
 [connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Rules Button" to="." method="_on_rules_button_pressed"]

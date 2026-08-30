@@ -1,0 +1,12 @@
+DONE:
+stairs working
+
+TODO:
+character sprites
+meeting system
+voicelines
+add custom text bubble
+dialogue screen code
+scenes progression & game over screen.
+title screen backgrounds
+
