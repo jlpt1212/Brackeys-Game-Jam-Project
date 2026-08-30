@@ -1,24 +1,24 @@
-[gd_scene format=3 uid="uid://dlcf3lk6gwd0j"]
+[gd_scene load_steps=3 format=3 uid="uid://dlcf3lk6gwd0j"]
 
 [ext_resource type="Script" uid="uid://c4jd4t5w3nxaq" path="res://Scripts/title_screen.gd" id="1_po227"]
 [ext_resource type="Texture2D" uid="uid://50j5s7nvk7vw" path="res://Assets/title background.png" id="2_q81kl"]
 
-[node name="Title Screen" type="Node2D" unique_id=106060841 node_paths=PackedStringArray("camera")]
+[node name="Title Screen" type="Node2D" node_paths=PackedStringArray("camera")]
 script = ExtResource("1_po227")
 camera = NodePath("Camera")
 
-[node name="Camera" type="Camera2D" parent="." unique_id=331246877]
+[node name="Camera" type="Camera2D" parent="."]
 position = Vector2(574, 324)
 
-[node name="Title" type="Label" parent="." unique_id=1303896198]
-offset_left = 180.00002
-offset_top = 78.00001
-offset_right = 261.00003
-offset_bottom = 113.88526
-scale = Vector2(10.449621, 2.6194592)
+[node name="Title" type="Label" parent="."]
+offset_left = 180.0
+offset_top = 78.0
+offset_right = 261.0
+offset_bottom = 113.885
+scale = Vector2(10.4496, 2.61946)
 text = "THE GAME"
 
-[node name="Play Button" type="Button" parent="." unique_id=1538752723]
+[node name="Play Button" type="Button" parent="."]
 offset_left = 442.0
 offset_top = 170.0
 offset_right = 701.0
@@ -26,7 +26,7 @@ offset_bottom = 312.0
 theme_override_font_sizes/font_size = 98
 text = "Play"
 
-[node name="Rules Button" type="Button" parent="." unique_id=959512481]
+[node name="Rules Button" type="Button" parent="."]
 offset_left = 369.0
 offset_top = 342.0
 offset_right = 788.0
@@ -34,12 +34,12 @@ offset_bottom = 480.0
 theme_override_font_sizes/font_size = 95
 text = "Controls"
 
-[node name="Rules Text" type="Label" parent="." unique_id=1015022730]
+[node name="Rules Text" type="Label" parent="."]
 offset_left = 39.0
-offset_top = 723.00006
+offset_top = 723.0
 offset_right = 1111.0
 offset_bottom = 1248.0
-rotation = -0.00018949529
+rotation = -0.000189495
 theme_override_font_sizes/font_size = 32
 text = "Hi! Welcome to the game.
 
@@ -53,14 +53,14 @@ WASD - Movement
 Space - Interact
 Arrow Keys/Mouse - Dialogue"
 
-[node name="Back Button (Controls)" type="Button" parent="." unique_id=739194468]
+[node name="Back Button (Controls)" type="Button" parent="."]
 offset_left = 23.0
 offset_top = 667.0
 offset_right = 174.0
 offset_bottom = 713.0
 text = "Back"
 
-[node name="Credits Button" type="Button" parent="." unique_id=67155384]
+[node name="Credits Button" type="Button" parent="."]
 offset_left = 372.0
 offset_top = 508.0
 offset_right = 789.0
@@ -68,14 +68,14 @@ offset_bottom = 631.0
 theme_override_font_sizes/font_size = 84
 text = "Credits"
 
-[node name="Back Button (Credits)" type="Button" parent="." unique_id=1106144335]
+[node name="Back Button (Credits)" type="Button" parent="."]
 offset_left = 23.0
 offset_top = 1315.0
 offset_right = 174.0
 offset_bottom = 1361.0
 text = "Back"
 
-[node name="Label" type="Label" parent="." unique_id=1596158026]
+[node name="Label" type="Label" parent="."]
 offset_left = 30.0
 offset_top = 1362.0
 offset_right = 1102.0
@@ -94,10 +94,10 @@ John S. Hark: Dogstab
 Dialogue Manager Asset Pack by Nathan Hoad
 2D Outer Shader by Nathan Lovato"
 
-[node name="TitleBackground" type="Sprite2D" parent="." unique_id=777519756]
+[node name="TitleBackground" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(574, 324)
-scale = Vector2(1.125, 2.2499998)
+scale = Vector2(1.125, 2.25)
 texture = ExtResource("2_q81kl")
 
 [connection signal="pressed" from="Play Button" to="." method="_on_play_button_pressed"]
