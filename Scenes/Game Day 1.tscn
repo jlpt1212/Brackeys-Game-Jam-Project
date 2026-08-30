@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://cfg2nq5tqu1de" path="res://Assets/stair 3.png" id="16_wfal6"]
 [ext_resource type="Texture2D" uid="uid://cb0goln3q6was" path="res://Assets/ship lower deck.png" id="17_6tx83"]
 [ext_resource type="Texture2D" uid="uid://1roq5gayiq3f" path="res://Assets/stair 4.png" id="18_svbuy"]
-[ext_resource type="Texture2D" uid="uid://ccl6iyu54vk3f" path="res://Assets/mast_top.png" id="19_svbuy"]
 [ext_resource type="Texture2D" uid="uid://1vy2b07y66iy" path="res://Assets/mast_left.png" id="20_1hxii"]
 [ext_resource type="Texture2D" uid="uid://dabqtmbu0k1l1" path="res://Assets/mast_right.png" id="21_s63xi"]
 
@@ -138,6 +137,10 @@ shader_parameter/highlight_enabled = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6b8oa"]
 size = Vector2(175, 137)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m0o0u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wit0u"]
 
 [node name="Game Scene" type="Node2D" unique_id=1394893672]
 
@@ -501,14 +504,8 @@ texture = ExtResource("18_svbuy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs 4" unique_id=491056591]
 position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_6b8oa")
-
-<<<<<<< HEAD
-[node name="MastTop" type="Sprite2D" parent="." unique_id=373202001]
-position = Vector2(30.999998, -461)
 scale = Vector2(2.2109375, 2.2569444)
-texture = ExtResource("19_svbuy")
-
+shape = SubResource("RectangleShape2D_6b8oa")
 
 [node name="MastLeft" type="Sprite2D" parent="." unique_id=1308822174]
 visible = false
@@ -522,6 +519,22 @@ z_index = 1
 position = Vector2(35, -4)
 scale = Vector2(2.1840277, 2.1840277)
 texture = ExtResource("21_s63xi")
+
+[node name="Meeting Button" type="RigidBody2D" parent="." unique_id=448469319]
+position = Vector2(623, -0.9999995)
+scale = Vector2(2.2109375, 2.3263888)
+physics_material_override = SubResource("PhysicsMaterial_m0o0u")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Meeting Button" unique_id=1621545118]
+shape = SubResource("RectangleShape2D_wit0u")
+
+[node name="ColorRect" type="ColorRect" parent="Meeting Button" unique_id=774314649]
+offset_left = -9.950525
+offset_top = -9.886567
+offset_right = 9.950537
+offset_bottom = 9.886567
+color = Color(1, 0, 0, 1)
 
 [connection signal="body_entered" from="Player/Area2D" to="Player/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Player/Area2D" to="Player/Area2D" method="_on_body_exited"]
