@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://rg7di6ypesrj" path="res://Scripts/npc.gd" id="3_gl113"]
 [ext_resource type="Texture2D" uid="uid://dogprk7i3ky8y" path="res://Assets/sprite sheet 1.png" id="3_svbuy"]
 [ext_resource type="Resource" uid="uid://iyd8c2e7d7g5" path="res://Dialogue/bob_day1.dialogue" id="4_7tbqs"]
+[ext_resource type="Texture2D" uid="uid://de6ajdvpcpr7l" path="res://Assets/Water.png" id="4_xbihp"]
 [ext_resource type="Shader" uid="uid://80055421g8sm" path="res://Shaders/interaction_shader.gdshader" id="5_y2y3a"]
 [ext_resource type="Texture2D" uid="uid://cqnnua6iw4lj6" path="res://Assets/FrozenVesselBlade.png" id="6_vfekk"]
 [ext_resource type="Resource" uid="uid://w6lw88tlcvw1" path="res://Dialogue/marley_day1.dialogue" id="7_7tbqs"]
@@ -22,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://1vy2b07y66iy" path="res://Assets/mast_left.png" id="20_1hxii"]
 [ext_resource type="Texture2D" uid="uid://dabqtmbu0k1l1" path="res://Assets/mast_right.png" id="21_s63xi"]
 [ext_resource type="Script" uid="uid://cigc53mfom4lb" path="res://game_manager.gd" id="22_g8iji"]
+[ext_resource type="Texture2D" uid="uid://crb80mt6qreum" path="res://Assets/Jam Background.png" id="24_5d5cr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74whk"]
 
@@ -137,7 +139,7 @@ shader_parameter/line_thickness = 2.000000095
 shader_parameter/highlight_enabled = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6b8oa"]
-size = Vector2(175, 137)
+size = Vector2(91.816246, 72.66461)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m0o0u"]
 
@@ -154,10 +156,25 @@ shader_parameter/highlight_enabled = false
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i47k4"]
 size = Vector2(30, 190)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbihp"]
+size = Vector2(32, 372)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5d5cr"]
+size = Vector2(996, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7ma5"]
+size = Vector2(28, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqtb4"]
+size = Vector2(461, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jf0ml"]
+size = Vector2(126, 28)
+
 [node name="Game Scene" type="Node2D" unique_id=1394893672]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1757714026]
-position = Vector2(2205, 0)
+position = Vector2(282, -16)
 script = ExtResource("1_7tbqs")
 
 [node name="Area2D" type="Area2D" parent="Player" unique_id=790529554]
@@ -179,6 +196,12 @@ texture_filter = 1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_svbuy")
 hframes = 4
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=526124999]
+z_index = -1
+position = Vector2(-192.99983, -11)
+scale = Vector2(3.6289063, 5.312934)
+texture = ExtResource("4_xbihp")
 
 [node name="ShipUpperDeck" type="Sprite2D" parent="." unique_id=1981279208]
 z_index = -1
@@ -514,7 +537,7 @@ material = SubResource("ShaderMaterial_m0o0u")
 texture = ExtResource("18_svbuy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs 4" unique_id=491056591]
-position = Vector2(0.5, 0.5)
+position = Vector2(3.5, 2)
 scale = Vector2(2.2109375, 2.2569444)
 shape = SubResource("RectangleShape2D_6b8oa")
 
@@ -636,6 +659,138 @@ text = "John"
 
 [node name="game manager" type="Node" parent="." unique_id=549938109]
 script = ExtResource("22_g8iji")
+
+[node name="Bottom Wall 2" type="RigidBody2D" parent="." unique_id=2132292527]
+z_index = 1
+position = Vector2(1077, -22)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall 2" unique_id=1066732322]
+position = Vector2(4, 1)
+shape = SubResource("RectangleShape2D_xbihp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1660124302]
+z_index = -5
+position = Vector2(5768, 486.00012)
+scale = Vector2(5.3798823, 21.80382)
+texture = ExtResource("24_5d5cr")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=17820138]
+z_index = -5
+position = Vector2(635, 484)
+scale = Vector2(5.3798823, 21.80382)
+texture = ExtResource("24_5d5cr")
+
+[node name="Bottom Wall 3" type="RigidBody2D" parent="." unique_id=56112582]
+z_index = 1
+position = Vector2(514, 1590)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall 3" unique_id=1698168971]
+position = Vector2(4, 1)
+shape = SubResource("RectangleShape2D_xbihp")
+
+[node name="Bottom Wall 4" type="RigidBody2D" parent="." unique_id=429565086]
+z_index = 1
+position = Vector2(-529, 1596)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall 4" unique_id=817385741]
+position = Vector2(4, 1)
+shape = SubResource("RectangleShape2D_xbihp")
+
+[node name="Bottom Wall 5" type="RigidBody2D" parent="." unique_id=711789636]
+z_index = 1
+position = Vector2(-18, 1429)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall 5" unique_id=1045795306]
+position = Vector2(12, 4.5)
+shape = SubResource("RectangleShape2D_5d5cr")
+
+[node name="Bottom Wall 6" type="RigidBody2D" parent="." unique_id=1269537105]
+z_index = 1
+position = Vector2(-16, 1758)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall 6" unique_id=1006446762]
+position = Vector2(12, 4.5)
+shape = SubResource("RectangleShape2D_5d5cr")
+
+[node name="Bottom Wall 7" type="RigidBody2D" parent="." unique_id=317175535]
+z_index = 1
+position = Vector2(133, 1506)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall 7" unique_id=544450042]
+position = Vector2(-6, 7)
+shape = SubResource("RectangleShape2D_b7ma5")
+
+[node name="Bottom Wall 8" type="RigidBody2D" parent="." unique_id=617648531]
+z_index = 1
+position = Vector2(-377, 1504)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall 8" unique_id=834536851]
+position = Vector2(-6, 7)
+shape = SubResource("RectangleShape2D_b7ma5")
+
+[node name="Bottom Wall 9" type="RigidBody2D" parent="." unique_id=897118311]
+z_index = 1
+position = Vector2(-113, 1555)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall 9" unique_id=1390388398]
+position = Vector2(-11.5, -3)
+shape = SubResource("RectangleShape2D_iqtb4")
+
+[node name="Bottom Wall 10" type="RigidBody2D" parent="." unique_id=123714484]
+z_index = 1
+position = Vector2(162, 1683)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall 10" unique_id=1703124933]
+position = Vector2(-6, 7)
+shape = SubResource("RectangleShape2D_b7ma5")
+
+[node name="Bottom Wall 11" type="RigidBody2D" parent="." unique_id=74466366]
+z_index = 1
+position = Vector2(-211, 1680)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall 11" unique_id=43027315]
+position = Vector2(-6, 7)
+shape = SubResource("RectangleShape2D_b7ma5")
+
+[node name="Bottom Wall 12" type="RigidBody2D" parent="." unique_id=135680955]
+z_index = 1
+position = Vector2(-134, 1663)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall 12" unique_id=1943873976]
+position = Vector2(4, -3)
+shape = SubResource("RectangleShape2D_jf0ml")
+
+[node name="Bottom Wall 13" type="RigidBody2D" parent="." unique_id=1270782554]
+z_index = 1
+position = Vector2(63, 1662)
+mass = 0.001
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall 13" unique_id=518502407]
+position = Vector2(4, -3)
+shape = SubResource("RectangleShape2D_jf0ml")
 
 [connection signal="body_entered" from="Player/Area2D" to="Player/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Player/Area2D" to="Player/Area2D" method="_on_body_exited"]
