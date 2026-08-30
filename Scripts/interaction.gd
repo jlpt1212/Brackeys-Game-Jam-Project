@@ -1,51 +1,53 @@
 extends Area2D
 
-var npcs_list: Array[NPC] = []
-var highlighted_npc: NPC = null;
+var interactable_list: Array[Node2D] = []
+var highlighted_interactable: Node2D = null;
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("npc"):
-		npcs_list.append(body)
+	if body.is_in_group("npc") or body.is_in_group("interactable"):
+		interactable_list.append(body)
 		print("npc entered range") #debug
 
 func _on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("npc"):
-		npcs_list.erase(body)
+	if body.is_in_group("npc") or body.is_in_group("interactable"):
+		interactable_list.erase(body)
 		print("npc left range") #debug
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	update_highlight()
-	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact"):
-		if npcs_list.size() > 0:
-			highlighted_npc.activate_dialogue()
+		if interactable_list.size() > 0:
+			if highlighted_interactable.is_in_group("npc"):
+				highlighted_interactable.activate_dialogue()
+			elif highlighted_interactable.is_in_group("interactable"):
+				highlighted_interactable.trigger_interact()
 
-func get_closest_npc() -> Node2D:
-	var closest_npc: Node2D;
+func get_closest_interactable() -> Node2D:
+	var closest_interactable: Node2D = null;
 	var closest_distance = INF;
 	
-	for npc in npcs_list:
-		var distance = global_position.distance_to(npc.global_position)
+	for interactable in interactable_list:
+		var distance = global_position.distance_to(interactable.global_position)
 		
 		if distance < closest_distance:
 			closest_distance = distance
-			closest_npc = npc
+			closest_interactable = interactable
 			
-	return closest_npc
+	return closest_interactable
 
 func update_highlight() -> void:
-	var closest_npc = get_closest_npc()
+	var closest_interactable = get_closest_interactable()
 	
-	if closest_npc == highlighted_npc:
+	if closest_interactable == highlighted_interactable:
 		return
 		
-	if highlighted_npc != null:
-		highlighted_npc.set_highlight(false)
+	if highlighted_interactable != null:
+		highlighted_interactable.set_highlight(false)
 		
-	if closest_npc != null:
-		closest_npc.set_highlight(true)
+	if closest_interactable != null:
+		closest_interactable.set_highlight(true)
 		
-	highlighted_npc = closest_npc
+	highlighted_interactable = closest_interactable

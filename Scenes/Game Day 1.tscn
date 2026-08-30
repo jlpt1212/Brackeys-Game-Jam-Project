@@ -429,8 +429,8 @@ stair_up_1 = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Stairs 3" unique_id=122362479]
 material = SubResource("ShaderMaterial_5eho8")
-position = Vector2(-88.25001, -28.00001)
-scale = Vector2(0.51377404, 0.50877166)
+position = Vector2(-88.50001, -28.999973)
+scale = Vector2(0.51515156, 0.52631605)
 texture = ExtResource("16_wfal6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs 3" unique_id=2066923236]
