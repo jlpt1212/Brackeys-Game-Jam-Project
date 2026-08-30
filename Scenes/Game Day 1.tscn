@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://1roq5gayiq3f" path="res://Assets/stair 4.png" id="18_svbuy"]
 [ext_resource type="Texture2D" uid="uid://1vy2b07y66iy" path="res://Assets/mast_left.png" id="20_1hxii"]
 [ext_resource type="Texture2D" uid="uid://dabqtmbu0k1l1" path="res://Assets/mast_right.png" id="21_s63xi"]
+[ext_resource type="Script" uid="uid://cigc53mfom4lb" path="res://game_manager.gd" id="22_g8iji"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74whk"]
 
@@ -142,13 +143,21 @@ size = Vector2(175, 137)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wit0u"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g8iji"]
+shader = ExtResource("5_y2y3a")
+shader_parameter/line_color = Color(1, 0.8352941, 0, 1)
+shader_parameter/line_thickness = 2.000000095
+shader_parameter/highlight_enabled = false
+
+[sub_resource type="ImageTexture" id="ImageTexture_jxl7u"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i47k4"]
 size = Vector2(30, 190)
 
 [node name="Game Scene" type="Node2D" unique_id=1394893672]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1757714026]
-position = Vector2(2200, 0)
+position = Vector2(200, 0)
 script = ExtResource("1_7tbqs")
 
 [node name="Area2D" type="Area2D" parent="Player" unique_id=790529554]
@@ -167,7 +176,6 @@ position_smoothing_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=748182155]
 texture_filter = 1
-position = Vector2(-2, -19)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_svbuy")
 hframes = 4
@@ -523,7 +531,7 @@ position = Vector2(35, -4)
 scale = Vector2(2.1840277, 2.1840277)
 texture = ExtResource("21_s63xi")
 
-[node name="Meeting Button" type="RigidBody2D" parent="." unique_id=448469319 node_paths=PackedStringArray("player", "camera")]
+[node name="Meeting Button" type="RigidBody2D" parent="." unique_id=448469319 node_paths=PackedStringArray("player", "camera") groups=["interactable"]]
 position = Vector2(623, -0.9999995)
 scale = Vector2(2.2109375, 2.3263888)
 physics_material_override = SubResource("PhysicsMaterial_m0o0u")
@@ -542,6 +550,10 @@ offset_top = -9.886567
 offset_right = 9.950537
 offset_bottom = 9.886567
 color = Color(1, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Meeting Button" unique_id=1376286614]
+material = SubResource("ShaderMaterial_g8iji")
+texture = SubResource("ImageTexture_jxl7u")
 
 [node name="Walls 3" type="Node" parent="." unique_id=1979000917]
 
@@ -579,30 +591,51 @@ shape = SubResource("RectangleShape2D_i47k4")
 
 [node name="Bob" type="Button" parent="Meeting Buttons" unique_id=744469683]
 texture_filter = 1
-offset_left = 1710.0001
-offset_top = -288.0
-offset_right = 1749.0001
-offset_bottom = -257.0
+offset_left = 1721.0
+offset_top = -117.000046
+offset_right = 1760.0
+offset_bottom = -86.000046
 scale = Vector2(7.1454296, 5.4418654)
 text = "Bob"
 
-[node name="Bob2" type="Button" parent="Meeting Buttons" unique_id=824311362]
+[node name="Marley" type="Button" parent="Meeting Buttons" unique_id=824311362]
 texture_filter = 1
-offset_left = 2247.0002
-offset_top = -288.00003
-offset_right = 2309.0002
-offset_bottom = -257.00003
-scale = Vector2(7.1454296, 5.4418654)
+offset_left = 2013.0
+offset_top = -318.00003
+offset_right = 2075.0
+offset_bottom = -287.00003
+scale = Vector2(5.969467, 5.4418654)
 text = "Marley"
 
-[node name="Bob3" type="Button" parent="Meeting Buttons" unique_id=445333496]
+[node name="Lisa" type="Button" parent="Meeting Buttons" unique_id=445333496]
 texture_filter = 1
-offset_left = 1673.0
-offset_top = 100.99999
-offset_right = 1735.0
-offset_bottom = 132.0
+offset_left = 2443.0
+offset_top = -111.0
+offset_right = 2505.0
+offset_bottom = -79.99999
 scale = Vector2(5.0445447, 5.656469)
 text = "Lisa"
+
+[node name="Charles" type="Button" parent="Meeting Buttons" unique_id=1172850959]
+texture_filter = 1
+offset_left = 1832.0
+offset_top = 122.00001
+offset_right = 1898.0
+offset_bottom = 153.0
+scale = Vector2(5.0445447, 5.656469)
+text = "Charles"
+
+[node name="John" type="Button" parent="Meeting Buttons" unique_id=1670214517]
+texture_filter = 1
+offset_left = 2275.0
+offset_top = 103.0
+offset_right = 2341.0
+offset_bottom = 134.0
+scale = Vector2(5.0445447, 5.656469)
+text = "John"
+
+[node name="game manager" type="Node" parent="." unique_id=549938109]
+script = ExtResource("22_g8iji")
 
 [connection signal="body_entered" from="Player/Area2D" to="Player/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Player/Area2D" to="Player/Area2D" method="_on_body_exited"]
