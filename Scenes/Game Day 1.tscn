@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://divwu0xmardx3" path="res://Assets/ship mid deck.png" id="14_5b22l"]
 [ext_resource type="Texture2D" uid="uid://cta8lv7kafs53" path="res://Assets/stair 2.png" id="15_2iryk"]
 [ext_resource type="Texture2D" uid="uid://cfg2nq5tqu1de" path="res://Assets/stair 3.png" id="16_wfal6"]
+[ext_resource type="Texture2D" uid="uid://cb0goln3q6was" path="res://Assets/ship lower deck.png" id="17_6tx83"]
+[ext_resource type="Texture2D" uid="uid://1roq5gayiq3f" path="res://Assets/stair 4.png" id="18_svbuy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_74whk"]
 
@@ -100,7 +102,7 @@ size = Vector2(16, 320)
 shader = ExtResource("5_y2y3a")
 shader_parameter/line_color = Color(1, 0.8352941, 0, 1)
 shader_parameter/line_thickness = 2.000000095
-shader_parameter/highlight_enabled = true
+shader_parameter/highlight_enabled = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yw3t0"]
 size = Vector2(175, 136)
@@ -115,6 +117,17 @@ shader_parameter/highlight_enabled = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5eho8"]
 size = Vector2(186.25769, 59.46132)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_mowf2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m0o0u"]
+shader = ExtResource("5_y2y3a")
+shader_parameter/line_color = Color(1, 0.8352941, 0, 1)
+shader_parameter/line_thickness = 2.000000095
+shader_parameter/highlight_enabled = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6b8oa"]
+size = Vector2(175, 137)
 
 [node name="Game Scene" type="Node2D" unique_id=1394893672]
 
@@ -450,6 +463,28 @@ texture = ExtResource("16_wfal6")
 position = Vector2(-88.128845, -28.730652)
 scale = Vector2(1, 0.9999998)
 shape = SubResource("RectangleShape2D_5eho8")
+
+[node name="ShipLowerDeck" type="Sprite2D" parent="." unique_id=220593795]
+z_index = -1
+position = Vector2(0, 1600)
+texture = ExtResource("17_6tx83")
+
+[node name="Stairs 4" type="RigidBody2D" parent="." unique_id=1753982782 node_paths=PackedStringArray("player", "camera") groups=["interactable"]]
+position = Vector2(373, 1586)
+physics_material_override = SubResource("PhysicsMaterial_mowf2")
+gravity_scale = 0.0
+script = ExtResource("12_vfekk")
+player = NodePath("../Player")
+camera = NodePath("../Player/Camera")
+stair_up_2 = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Stairs 4" unique_id=832186346]
+material = SubResource("ShaderMaterial_m0o0u")
+texture = ExtResource("18_svbuy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stairs 4" unique_id=491056591]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_6b8oa")
 
 [connection signal="body_entered" from="Player/Area2D" to="Player/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Player/Area2D" to="Player/Area2D" method="_on_body_exited"]

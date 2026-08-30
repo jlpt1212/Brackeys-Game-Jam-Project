@@ -21,9 +21,11 @@ func trigger_interact() -> void:
 		player.position = Vector2(189, 800)
 		camera.reset_smoothing()
 	elif stair_down_2:
-		pass
+		player.position = Vector2(240, 1590)
+		camera.reset_smoothing()
 	elif stair_up_1:
 		player.position = Vector2(410, 175)
 		camera.reset_smoothing()
 	elif stair_up_2:
-		pass
+		player.position = Vector2(189, 800)
+		camera.reset_smoothing()
