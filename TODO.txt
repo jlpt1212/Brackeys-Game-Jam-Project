@@ -9,3 +9,5 @@ voicelines
 dialogue screen code
 scenes progression & game over screen.
 title screen backgrounds
+music
+animations
