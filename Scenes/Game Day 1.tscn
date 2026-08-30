@@ -142,10 +142,13 @@ size = Vector2(175, 137)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wit0u"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i47k4"]
+size = Vector2(30, 190)
+
 [node name="Game Scene" type="Node2D" unique_id=1394893672]
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1757714026]
-position = Vector2(200, 0)
+position = Vector2(2200, 0)
 script = ExtResource("1_7tbqs")
 
 [node name="Area2D" type="Area2D" parent="Player" unique_id=790529554]
@@ -520,11 +523,15 @@ position = Vector2(35, -4)
 scale = Vector2(2.1840277, 2.1840277)
 texture = ExtResource("21_s63xi")
 
-[node name="Meeting Button" type="RigidBody2D" parent="." unique_id=448469319]
+[node name="Meeting Button" type="RigidBody2D" parent="." unique_id=448469319 node_paths=PackedStringArray("player", "camera")]
 position = Vector2(623, -0.9999995)
 scale = Vector2(2.2109375, 2.3263888)
 physics_material_override = SubResource("PhysicsMaterial_m0o0u")
 gravity_scale = 0.0
+script = ExtResource("12_vfekk")
+player = NodePath("../Player")
+camera = NodePath("../Player/Camera")
+meeting_button = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Meeting Button" unique_id=1621545118]
 shape = SubResource("RectangleShape2D_wit0u")
@@ -535,6 +542,67 @@ offset_top = -9.886567
 offset_right = 9.950537
 offset_bottom = 9.886567
 color = Color(1, 0, 0, 1)
+
+[node name="Walls 3" type="Node" parent="." unique_id=1979000917]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Walls 3" unique_id=1983754215]
+position = Vector2(2100, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls 3/RigidBody2D" unique_id=259948227]
+position = Vector2(5, -8)
+shape = SubResource("RectangleShape2D_i47k4")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="Walls 3" unique_id=1095280503]
+position = Vector2(2291, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls 3/RigidBody2D2" unique_id=200682401]
+position = Vector2(5, -8)
+shape = SubResource("RectangleShape2D_i47k4")
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="Walls 3" unique_id=548373070]
+position = Vector2(2198.0002, -93)
+rotation = 1.5728099
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls 3/RigidBody2D3" unique_id=716720838]
+position = Vector2(5, -8)
+shape = SubResource("RectangleShape2D_i47k4")
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="Walls 3" unique_id=552823710]
+position = Vector2(2198.0002, 67)
+rotation = 1.5728099
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls 3/RigidBody2D4" unique_id=251558938]
+position = Vector2(5, -8)
+shape = SubResource("RectangleShape2D_i47k4")
+
+[node name="Meeting Buttons" type="Node" parent="." unique_id=2022896298]
+
+[node name="Bob" type="Button" parent="Meeting Buttons" unique_id=744469683]
+texture_filter = 1
+offset_left = 1710.0001
+offset_top = -288.0
+offset_right = 1749.0001
+offset_bottom = -257.0
+scale = Vector2(7.1454296, 5.4418654)
+text = "Bob"
+
+[node name="Bob2" type="Button" parent="Meeting Buttons" unique_id=824311362]
+texture_filter = 1
+offset_left = 2247.0002
+offset_top = -288.00003
+offset_right = 2309.0002
+offset_bottom = -257.00003
+scale = Vector2(7.1454296, 5.4418654)
+text = "Marley"
+
+[node name="Bob3" type="Button" parent="Meeting Buttons" unique_id=445333496]
+texture_filter = 1
+offset_left = 1673.0
+offset_top = 100.99999
+offset_right = 1735.0
+offset_bottom = 132.0
+scale = Vector2(5.0445447, 5.656469)
+text = "Lisa"
 
 [connection signal="body_entered" from="Player/Area2D" to="Player/Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Player/Area2D" to="Player/Area2D" method="_on_body_exited"]

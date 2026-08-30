@@ -7,6 +7,7 @@ extends Node2D
 @export var stair_down_2: bool = false;
 @export var stair_up_1: bool = false;
 @export var stair_up_2: bool = false;
+@export var meeting_button: bool = false;
 
 func _ready() -> void:
 	if sprite.material is ShaderMaterial:
@@ -28,4 +29,7 @@ func trigger_interact() -> void:
 		camera.reset_smoothing()
 	elif stair_up_2:
 		player.position = Vector2(189, 800)
+		camera.reset_smoothing()
+	elif meeting_button:
+		player.position = Vector2(2200, 0)
 		camera.reset_smoothing()
