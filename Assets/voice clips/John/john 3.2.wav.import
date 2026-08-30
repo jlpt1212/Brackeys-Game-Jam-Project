@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ca1qrb28ptar4"
+path="res://.godot/imported/john 3.2.wav-a747619f601efee5a10008b1d14cfdb9.sample"
+
+[deps]
+
+source_file="res://Assets/voice clips/John/john 3.2.wav"
+dest_files=["res://.godot/imported/john 3.2.wav-a747619f601efee5a10008b1d14cfdb9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
